@@ -6,10 +6,6 @@ class SessionsController < ApplicationController
     redirect_to root_path
   end
 
-  def current_user
-    @user ||= User.find_by_id!(session[:user_id])
-  end
-
   protected
 
   def auth_hash
