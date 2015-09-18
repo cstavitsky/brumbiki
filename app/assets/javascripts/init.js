@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  $("#search-button").on("submit", function(event) {
+  $("#search-button").on("click", function(event) {
     event.preventDefault();
 
     var twitterHandle = $("#search-bar").val();
@@ -8,7 +8,7 @@ $(document).ready(function() {
     var input = {handle: twitterHandle};
 
     tweets.fetch({ data: $.param(input) });
-
+    console.log(tweets[0])
     // $.ajax({
     //   method: "GET",
     //   url: "/tweets",
