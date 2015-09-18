@@ -63,7 +63,7 @@ GEM
       activesupport (>= 4.1.0)
     haml (4.0.7)
       tilt
-<<<<<<< HEAD
+
     http (0.9.6)
       addressable (~> 2.3)
       http-cookie (~> 1.0)
@@ -73,9 +73,9 @@ GEM
       domain_name (~> 0.5)
     http-form_data (1.0.1)
     http_parser.rb (0.6.0)
-=======
+
     hashie (3.4.2)
->>>>>>> master
+
     i18n (0.7.0)
     jasmine-core (2.3.4)
     jasmine-rails (0.11.0)
