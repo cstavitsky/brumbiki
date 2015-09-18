@@ -1,8 +1,12 @@
-<li class="tweet">
-  <img class="profile-pic" src="<%= user_profile_image_url %>" alt="">
-  <div class="tweet-content">
-    <p>
-      <span class="test"><%= text %></span>
-    </p>
-  </div>
-</li>
+<% if (urls.length > 0){ %>
+  <li class="tweet">
+    <img class="profile-pic" src="<%= user_profile_image_url %>" alt="">
+    <div class="tweet-content">
+      <p>
+        <span class="test"><%= text %></span>
+        <br>
+        <span class="test"><%= urls[0] %></span>
+      </p>
+    </div>
+  </li>
+<% } %>

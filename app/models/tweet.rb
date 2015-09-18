@@ -11,7 +11,7 @@ class Tweet
   def self.all_tweets(handle)
     self.client.user_timeline(handle).map do |tweet|
       created_at = tweet.created_at
-      urls = self.expanded_urls(tweet)
+      p urls = self.expanded_urls(tweet)
       text = tweet.text
       user_profile_image_url = tweet.user.profile_image_url.to_s
       Tweet.new(created_at: created_at, urls: urls, text: text, user_profile_image_url: user_profile_image_url)
