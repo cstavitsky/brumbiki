@@ -13,4 +13,5 @@
 /tmp
 
 /config/secrets.yml
+/.env
 
