@@ -1,4 +1,4 @@
 var TweetsCollection = Backbone.Collection.extend({
-  url: "/",
+  url: "/tweets",
   model: Tweet
 });

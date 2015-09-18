@@ -7,17 +7,19 @@ $(document).ready(function() {
     var tweets = new TweetsCollection();
     var input = {handle: twitterHandle};
 
-    $.ajax({
-      method: "GET",
-      url: "/tweets",
-      data: input
-    })
-    .done(function(response) {
-      response.forEach(function(tweet)) {
-        var jstweet = new Tweet(tweet);
-        tweets.add(jstweet)
-      }
-    })
-  })
+    tweets.fetch({ data: $.param(input) });
+
+    // $.ajax({
+    //   method: "GET",
+    //   url: "/tweets",
+    //   data: input
+    // })
+    // .done(function(response) {
+    //   response.forEach(function(tweet) {
+    //     var jstweet = new Tweet(tweet);
+    //     tweets.add(jstweet)
+    //   })
+    // })
+  });
 
 });
