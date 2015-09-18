@@ -5,16 +5,20 @@ $(document).ready(function() {
 
     var twitterHandle = $("#search-bar").val();
     var tweets = new TweetsCollection();
-    var input = {handle: twitterHandle};
+    var tweetsView = new TweetsView({ collection: tweets });
 
-    tweets.fetch({ data: $.param(input) });
-    console.log(tweets[0])
+    tweets.fetch({
+      reset: true,
+      data: $.param({ handle: twitterHandle })
+    });
+
     // $.ajax({
     //   method: "GET",
     //   url: "/tweets",
-    //   data: input
+    //   data: { handle: twitterHandle }
     // })
     // .done(function(response) {
+    //   console.log(response);
     //   response.forEach(function(tweet) {
     //     var jstweet = new Tweet(tweet);
     //     tweets.add(jstweet)
