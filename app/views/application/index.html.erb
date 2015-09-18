@@ -9,6 +9,20 @@
     <input id="search-button" type="submit" value="Go!">
   </div>
 </nav>
-
+<div id="google-search-container">
+<script>
+  (function() {
+    var cx = '002386809602558996347:mkpmuxqfgm8';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
+</div>
 <div id="temporary-container">
 </div>
