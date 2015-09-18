@@ -1,7 +1,9 @@
 <nav>
+
   <% if current_user %>
   <span class="navbar-text navbar-right">Signed in as <%=current_user.name %></span>
   <% end%>
+
   <div id="search-container">
     <input id="search-bar" name="search-bar" type="text" placeholder="@username">
     <input id="search-button" type="submit" value="Go!">
