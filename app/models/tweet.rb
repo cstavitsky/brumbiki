@@ -11,7 +11,7 @@ class Tweet
   end
 
   def self.all_tweets(handle)
-    self.client.user_timeline(handle, { count: 75, include_rts: false }).map do |tweet|
+    self.client.user_timeline(handle, { count: 40, include_rts: false }).map do |tweet|
       created_at = tweet.created_at
       urls = self.expanded_urls(tweet)
       link_titles = self.scrape_urls_for_titles(urls)

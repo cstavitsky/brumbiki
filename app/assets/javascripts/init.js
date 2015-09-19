@@ -16,40 +16,39 @@ $(document).ready(function() {
     });
   });
 
+  $("#link-search-button").on("click", function(event){
+    event.preventDefault();
 
-    $("#link-search-button").on("click", function(event){
-        event.preventDefault();
+    var query = $("#link-search-bar").val();
+    var results = new SearchResultsCollection();
+    var resultsCollectionView = new SearchResultsView({ collection: results});
 
-        var query = $("#link-search-bar").val();
-        var results = new SearchResultsCollection();
-        var resultsCollectionView = new SearchResultsView({ collection: results});
+    results.fetch({
+      reset: true,
+      data: $.param({ query: query })
+    });
+  });
 
-        results.fetch({
-            reset: true,
-            data: $.param({ query: query })
-        });
-    })
+  $("#keyword-search-button").on("click", function(event){
+    event.preventDefault();
 
-    $("#keyword-search-button").on("click", function(event){
-        event.preventDefault();
+    var query = $("#keyword-search-bar").val();
+    var results = new SearchResultsCollection();
+    var resultsCollectionView = new SearchResultsView({ collection: results});
 
-        var query = $("#keyword-search-bar").val();
-        var results = new SearchResultsCollection();
-        var resultsCollectionView = new SearchResultsView({ collection: results});
+    results.fetch({
+      reset: true,
+      data: $.param({ query: query })
+    });
+  });
 
-        results.fetch({
-            reset: true,
-            data: $.param({ query: query })
-        });
-    })
-
-    $("#temporary-container").on("click", ".keyword", function(event){
-      event.preventDefault();
-      var keyword = $(this).val();
-      $("#keyword-search-bar").val(function(index, value){
-        return value + " " + keyword;
-      })
-      $("#keyword-search-button").click();
-    })
+  $("#temporary-container").on("click", ".keyword", function(event){
+    event.preventDefault();
+    var keyword = $(this).val();
+    $("#keyword-search-bar").val(function(index, value){
+      return value + " " + keyword;
+    });
+    $("#keyword-search-button").click();
+  });
 
 });
