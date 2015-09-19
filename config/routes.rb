@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   root "application#index"
 
   get "/tweets" => "tweets#index"
+  get "/bing_results" => "bing_results#index"
 
 end

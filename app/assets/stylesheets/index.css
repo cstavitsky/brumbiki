@@ -38,6 +38,14 @@ nav {
   background-color: #1A237E;
 }
 
+
 #temporary-container {
   padding-top: 100px;
+}
+
+#link-search-container {
+  border: 5px solid black;
+  position: absolute;
+  top: 300px;
+  width: 350px;
 }

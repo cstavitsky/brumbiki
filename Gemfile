@@ -37,6 +37,10 @@ gem 'ruby-haml-js'
 
 gem 'twitter'
 
+gem 'unirest'
+
+gem 'bing-search'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
