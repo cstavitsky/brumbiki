@@ -1,5 +1,6 @@
 require 'open-uri'
-require 'net/http'
+require 'open_uri_redirections'
+# require 'net/http'
 
 class Link
 
@@ -9,9 +10,8 @@ class Link
   end
 
   def grab_title
-    p @url
     begin
-      body = open(@url).read
+      body = open(@url, :allow_redirections => :all).read
     rescue => e
       case e
       when OpenURI::HTTPError
@@ -23,7 +23,11 @@ class Link
       end
     end
     doc = Oga.parse_html(body)
-    p html_title = doc.at_css('title').text
+    if doc.at_css('title') != nil
+      p html_title = doc.at_css('title').text
+    else
+      return @url
+    end
   end
 
 end

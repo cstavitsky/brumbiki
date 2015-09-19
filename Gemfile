@@ -30,6 +30,7 @@ gem 'underscore-rails'
 
 # gem 'nokogiri'
 gem 'oga'
+gem 'open_uri_redirections'
 
 gem 'haml'
 
