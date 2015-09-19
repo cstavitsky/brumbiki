@@ -29,10 +29,6 @@ $(document).ready(function() {
     });
   });
 
-  $("#keyword-search-button").on("click", function(event){
-    event.preventDefault();
-
-
   $("#link-search-button").on("click", function(event){
       event.preventDefault();
 
