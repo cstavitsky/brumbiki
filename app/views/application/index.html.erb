@@ -1,19 +1,22 @@
 <nav>
-
   <% if current_user %>
   <span class="navbar-text navbar-right">Signed in as <%=current_user.name %></span>
-  <% end%>
+    <a href="/logout">Logout</a>
+  <% else %>
+    <a href="/auth/twitter">Login with Twitter</a>
+  <% end %>
+
   <div id="search-container">
     <input id="search-bar" name="search-bar" type="text" placeholder="@username">
     <input id="search-button" type="submit" value="Go!">
   </div>
 </nav>
+
 <div id="link-search-container">
-    <input id="link-search-bar" name="search-bar" type="text" placeholder="search content">
-    <input id="link-search-button" type="submit" value="Go!">
-  </div>
-<gcse:search></gcse:search>
+  <input id="link-search-bar" name="search-bar" type="text" placeholder="search content">
+  <input id="link-search-button" type="submit" value="Go!">
 </div>
+
 <div class="content-container">
   <div id="temporary-container">
   </div>
