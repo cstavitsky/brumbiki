@@ -43,7 +43,7 @@ $(document).ready(function() {
         });
     })
 
-    $("#search-results-container").on("click", ".keyword", function(event){
+    $("#temporary-container").on("click", ".keyword", function(event){
       event.preventDefault();
       var keyword = $(this).val();
       $("#keyword-search-bar").val(function(index, value){

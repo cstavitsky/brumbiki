@@ -18,10 +18,7 @@ class BingResult
       p title = bing_search[count].title
       description = bing_search[count].description
       url = bing_search[count].url
-      # p text = Highscore::Content.new "foo bar"
-      keywords = title.keywords
-      p keywords = keywords.rank.map { |word| word.text }
-      results << BingResult.new(title: title, description: description, url: url, keywords: keywords)
+      results << BingResult.new(title: title, description: description, url: url)
     end
     p results
   end
