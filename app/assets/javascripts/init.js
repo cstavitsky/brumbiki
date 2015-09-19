@@ -12,6 +12,7 @@ $(document).ready(function() {
       data: $.param({ handle: twitterHandle })
     });
 
+
     // $.ajax({
     //   method: "GET",
     //   url: "/tweets",
@@ -25,5 +26,19 @@ $(document).ready(function() {
     //   })
     // })
   });
+
+
+    $("#link-search-button").on("click", function(event){
+        event.preventDefault();
+
+        var query = $("#link-search-bar").val();
+        var results = new SearchResultsCollection();
+        var resultsCollectionView = new SearchResultsView({ collection: results});
+
+        results.fetch({
+            reset: true,
+            data: $.param({ query: query })
+        });
+    })
 
 });
