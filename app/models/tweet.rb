@@ -17,12 +17,15 @@ class Tweet
       urls = self.expanded_urls(tweet)
       link_titles = self.scrape_urls_for_titles(urls)
       text = tweet.text
-      # put an if statement here to account for tweets without links
-      p title = link_titles[0].grab_title
-      title_keywords = title.keywords
+      if link_titles.length == 0
+        p "UHHHHH"
+      else
+        p title = link_titles[0].grab_title
+        title_keywords = title.keywords
+        title_keywords = title_keywords.rank.map { |word| word.text }
+      end
       keywords = text.keywords
       keywords = keywords.rank.map { |word| word.text }
-      title_keywords = title_keywords.rank.map { |word| word.text }
       user_profile_image_url = tweet.user.profile_image_url.to_s
       Tweet.new(created_at: created_at, urls: urls, text: text, user_profile_image_url: user_profile_image_url, link_titles: link_titles, keywords: keywords, title_keywords: title_keywords)
     end

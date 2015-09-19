@@ -7,7 +7,6 @@ class BingResult
     @title = attributes[:title]
     @description = attributes[:description]
     @url = attributes[:url]
-    @keywords = attributes[:keywords]
   end
 
   def self.all_results(query)

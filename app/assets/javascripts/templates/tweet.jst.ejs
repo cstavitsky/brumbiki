@@ -12,10 +12,12 @@
           <% for (var i=0; i< keywords.length; i++) { %>
             <li><input class="keyword" type="submit" value="<%=keywords[i]%>"></li>
         <% } %>
-       <ul class="result-keywords">
+      </ul>
+       <ul class="tweet-keywords">
           <% for (var i=0; i< title_keywords.length; i++) { %>
-            <li><input class="keyword" type="submit" value="<%=keywords[i]%>"></li>
+            <li><input class="keyword" type="submit" value="<%=title_keywords[i]%>"></li>
         <% } %>
+      </ul>
     </div>
   </li>
 <% } %>
