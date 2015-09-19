@@ -43,6 +43,8 @@ GEM
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     bing-search (2.0.0)
+    bloomfilter-rb (2.1.1)
+      redis
     buftok (0.2.0)
     builder (3.2.2)
     byebug (6.0.2)
@@ -71,6 +73,9 @@ GEM
     haml (4.0.7)
       tilt
     hashie (3.4.2)
+    highscore (1.2.0)
+      bloomfilter-rb (>= 2.1.1)
+      whatlanguage (>= 1.0.0)
     http (0.9.6)
       addressable (~> 2.3)
       http-cookie (~> 1.0)
@@ -159,6 +164,7 @@ GEM
     rake (10.4.2)
     rdoc (4.2.0)
       json (~> 1.4)
+    redis (3.2.1)
     rest-client (1.6.7)
       mime-types (>= 1.16)
     ruby-haml-js (0.0.5)
@@ -219,6 +225,7 @@ GEM
       binding_of_caller (>= 0.7.2)
       railties (>= 4.0)
       sprockets-rails (>= 2.0, < 4.0)
+    whatlanguage (1.0.5)
 
 PLATFORMS
   ruby
@@ -229,6 +236,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   dotenv-rails
   haml
+  highscore
   jasmine-rails
   jbuilder (~> 2.0)
   jquery-rails
