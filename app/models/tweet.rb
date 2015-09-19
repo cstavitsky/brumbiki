@@ -6,20 +6,26 @@ class Tweet
     # @user_mentions = attributes[:user_mentions]
     @text = attributes[:text]
     @user_profile_image_url = attributes[:user_profile_image_url]
+    @link_titles = attributes[:link_titles]
   end
 
   def self.all_tweets(handle)
-    self.client.user_timeline(handle).map do |tweet|
+    self.client.user_timeline(handle, { count: 20, include_rts: false }).map do |tweet|
       created_at = tweet.created_at
-      p urls = self.expanded_urls(tweet)
+      urls = self.expanded_urls(tweet)
+      link_titles = self.scrape_urls_for_titles(urls)
       text = tweet.text
       user_profile_image_url = tweet.user.profile_image_url.to_s
-      Tweet.new(created_at: created_at, urls: urls, text: text, user_profile_image_url: user_profile_image_url)
+      Tweet.new(created_at: created_at, urls: urls, text: text, user_profile_image_url: user_profile_image_url, link_titles: link_titles)
     end
   end
 
   def self.expanded_urls(tweet)
     tweet.urls.map { |url| url.expanded_url.to_s }
+  end
+
+  def self.scrape_urls_for_titles(urls)
+    urls.map { |url| Link.new(url) }
   end
 
   protected

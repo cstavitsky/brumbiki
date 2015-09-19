@@ -37,3 +37,7 @@ nav {
   color: white;
   background-color: #1A237E;
 }
+
+#temporary-container {
+  padding-top: 100px;
+}

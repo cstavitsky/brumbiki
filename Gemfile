@@ -28,6 +28,9 @@ gem 'rails-backbone'
 
 gem 'underscore-rails'
 
+# gem 'nokogiri'
+gem 'oga'
+
 gem 'haml'
 
 gem 'ruby-haml-js'
