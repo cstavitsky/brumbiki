@@ -12,6 +12,7 @@ var SearchResultsView = Backbone.View.extend({
   },
 
   addAll: function(){
+    $("#search-results-container").empty();
     return this.collection.each(function(result) {
       return this.addOne(result);
     }, this);
