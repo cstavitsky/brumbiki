@@ -1,4 +1,5 @@
 require 'open-uri'
+require 'net/http'
 
 class Link
 
@@ -7,17 +8,22 @@ class Link
     @title = grab_title
   end
 
-  # def grab_title
-  #   doc = Nokogiri::HTML(open(@url))
-  #   html_title = doc.css('title').to_s
-  #   html_title.match(/[^\A<title>].+[^<\Wtitle>]/)[0]
-  # end
-
   def grab_title
-    handle = open(@url)
-    doc = Oga.parse_html(handle)
-    html_title = doc.css('title').to_s
-    html_title.match(/[^\A<title>].+[^<\Wtitle>]/)[0]
+    p @url
+    begin
+      body = open(@url).read
+    rescue => e
+      case e
+      when OpenURI::HTTPError
+        return @url
+      when SocketError
+        return @url
+      else
+        raise e
+      end
+    end
+    doc = Oga.parse_html(body)
+    p html_title = doc.at_css('title').text
   end
 
 end
