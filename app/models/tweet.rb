@@ -8,6 +8,7 @@ class Tweet
     @user_profile_image_url = attributes[:user_profile_image_url]
     @link_titles = attributes[:link_titles]
     @keywords = attributes[:keywords]
+    @title_keywords = attributes[:title_keywords]
   end
 
   def self.all_tweets(handle)
@@ -15,11 +16,15 @@ class Tweet
       created_at = tweet.created_at
       urls = self.expanded_urls(tweet)
       link_titles = self.scrape_urls_for_titles(urls)
-      p text = tweet.text
+      text = tweet.text
+      # put an if statement here to account for tweets without links
+      p title = link_titles[0].grab_title
+      title_keywords = title.keywords
       keywords = text.keywords
-      p keywords = keywords.rank.map { |word| word.text }
+      keywords = keywords.rank.map { |word| word.text }
+      title_keywords = title_keywords.rank.map { |word| word.text }
       user_profile_image_url = tweet.user.profile_image_url.to_s
-      Tweet.new(created_at: created_at, urls: urls, text: text, user_profile_image_url: user_profile_image_url, link_titles: link_titles, keywords: keywords)
+      Tweet.new(created_at: created_at, urls: urls, text: text, user_profile_image_url: user_profile_image_url, link_titles: link_titles, keywords: keywords, title_keywords: title_keywords)
     end
   end
 

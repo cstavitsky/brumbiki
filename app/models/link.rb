@@ -3,6 +3,7 @@ require 'net/http'
 
 class Link
 
+  attr_reader :title
   def initialize(url)
     @url = url
     @title = grab_title
@@ -23,7 +24,8 @@ class Link
       end
     end
     doc = Oga.parse_html(body)
-    p html_title = doc.at_css('title').text
+    html_title = doc.at_css('title').text
+    html_title
   end
 
 end
