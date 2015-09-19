@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+  var keywords = []
   $("#keyword-search-container").hide();
 
   var tweets = new TweetsCollection();
@@ -29,26 +29,45 @@ $(document).ready(function() {
     });
   });
 
-  $("#keyword-search-button").on("click", function(event){
-    event.preventDefault();
+  $("#link-search-button").on("click", function(event){
+      event.preventDefault();
 
-    var query = $("#keyword-search-bar").val();
-    var results = new SearchResultsCollection();
-    var resultsCollectionView = new SearchResultsView({ collection: results});
+      var query = $("#link-search-bar").val();
+      var results = new SearchResultsCollection();
+      var resultsCollectionView = new SearchResultsView({ collection: results});
 
-    results.fetch({
-      reset: true,
-      data: $.param({ query: query })
-    });
-  });
+      results.fetch({
+          reset: true,
+          data: $.param({ query: query })
+      });
+  })
+
+
 
   $("#temporary-container").on("click", ".keyword", function(event){
     event.preventDefault();
-    var keyword = $(this).val();
-    $("#keyword-search-bar").val(function(index, value){
-      return value + " " + keyword;
-    });
-    $("#keyword-search-button").click();
-  });
+    var value = $(this).val();
+    if(keywords.indexOf(value) > -1){
+      var index = keywords.indexOf(value);
+      keywords.splice(index, 1)
+      $(this).removeClass("active-keyword")
+    } else {
+      $(this).addClass("active-keyword");
+      keywords.push(value);
+    }
+    var query = keywords.join(' ')
+
+    var results = new SearchResultsCollection();
+    var resultsCollectionView = new SearchResultsView({ collection: results});
+    if (query.length > 0){
+      results.fetch({
+          reset: true,
+          data: $.param({ query: query })
+      });
+    }
+
+
+  })
+
 
 });

@@ -1,14 +1,10 @@
 <nav>
   <% if current_user %>
+  <span class="navbar-text navbar-right">Signed in as <%=current_user.name %></span>
     <a href="/logout">Logout</a>
   <% else %>
     <a href="/auth/twitter">Login with Twitter</a>
   <% end %>
-
-  <div id="keyword-search-container">
-    <input id="keyword-search-bar" name="search-bar" type="text" placeholder="search content">
-    <input id="keyword-search-button" type="submit" value="Go!">
-  </div>
 
   <div id="search-container">
     <input id="search-bar" name="search-bar" type="text" placeholder="@username">
