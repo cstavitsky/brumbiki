@@ -36,7 +36,7 @@ class TwitterUser
     end
 
     Clientable.client.users(top_three_mentions_ids).map do |user|
-      TwitterUser.new(uid: user.id, handle: user.screen_name, name: user.name, profile_image: user.profile_image_url, user_type: "tertiary")
+      TwitterUser.new(uid: user.id, handle: user.screen_name, name: user.name, profile_image: user.profile_image_url.to_s, user_type: "tertiary")
     end
   end
 

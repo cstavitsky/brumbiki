@@ -1,22 +1,20 @@
-var TweetsView = Backbone.View.extend({
+var TwitterUsersView = Backbone.View.extend({
 
   initialize: function() {
     this.listenTo(this.collection, 'reset', this.addAll);
   },
 
-  addOne: function(tweet) {
-    var tweet_view = new TweetView({model: tweet});
-    tweet_view.render();
+  addOne: function(twitterUser) {
+    var twitterUserView = new TwitterUserView({model: twitterUser});
+    twitterUserView.render();
 
-    $("#temporary-container").append(tweet_view.el);
+    $("#one-degree-container").append(twitterUserView.el);
   },
 
   addAll: function() {
-    $("#one-degree-container").css("display", "block")
-
-    $("#temporary-container").empty();
-    return this.collection.each(function(tweet) {
-      return this.addOne(tweet);
+    $("#one-degree-container").empty();
+    return this.collection.each(function(twitterUser) {
+      return this.addOne(twitterUser);
     }, this);
   }
 });
