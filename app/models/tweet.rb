@@ -13,7 +13,7 @@ class Tweet
 
   def self.prune_tweet(tweet_text)
     words = tweet_text.split(" ")
-    words.delete_if { |word| word.match(/^\s*(#|$)|\b(http.*)\b/) }
+    words.delete_if { |word| word.match(/^\s*(#|$)|\b(http.*|https.*)\b/) }
     words.join(" ")
   end
 
