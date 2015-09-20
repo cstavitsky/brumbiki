@@ -3,7 +3,7 @@ class Tweet
   def initialize(attributes)
     @created_at = attributes[:created_at]
     @urls = attributes[:urls]
-    # @user_mentions = attributes[:user_mentions]
+    @user_mentions = attributes[:user_mentions]
     @text = attributes[:text]
     @user_profile_image_url = attributes[:user_profile_image_url]
     @link_titles = attributes[:link_titles]
@@ -13,12 +13,13 @@ class Tweet
 
   def self.all_tweets(handle)
     self.client.user_timeline(handle, { count: 40, include_rts: false }).map do |tweet|
+      p tweet.user_mentions
       created_at = tweet.created_at
       urls = self.expanded_urls(tweet)
       link_titles = self.scrape_urls_for_titles(urls)
       text = tweet.text
       if link_titles.length == 0
-        p "UHHHHH"
+        # do nothing
       else
         p title = link_titles[0].grab_title
         title_keywords = title.keywords
