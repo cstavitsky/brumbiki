@@ -17,6 +17,17 @@ $(document).ready(function() {
     });
   });
 
+  $("#search-container input").on("keyup", function(event) {
+    event.preventDefault();
+    var twitterHandle = $("#search-bar").val();
+    if (event.which === 13){
+    tweets.fetch({
+      reset: true,
+      data: $.param({ handle: twitterHandle })
+    });
+    }
+  });
+
   $("#link-search-button").on("click", function(event){
     event.preventDefault();
 
