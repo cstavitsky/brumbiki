@@ -1,10 +1,9 @@
 <% if (links.length > 0){ %>
   <li class="tweet">
-    <img class="profile-pic" src="<%= target_profile_image_url %>" alt="">
     <div class="tweet-content">
       <p>
-        <h1><span class="test"><%= text %></span>
-        <br>
+        <%= embedded_tweet %><br>
+
         <a href="<%= links[0].url %>" class="test"><%= links[0].title %></a>
       </p>
       <ul class="result-keywords">

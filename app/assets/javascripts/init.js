@@ -15,6 +15,7 @@ $(document).ready(function() {
       reset: true,
       data: $.param({ handle: twitterHandle })
     });
+    $("#search-results-container").empty();
   });
 
   $("#search-container input").on("keyup", function(event) {
@@ -25,6 +26,7 @@ $(document).ready(function() {
       reset: true,
       data: $.param({ handle: twitterHandle })
     });
+    $("#search-results-container").empty();
     }
   });
 
