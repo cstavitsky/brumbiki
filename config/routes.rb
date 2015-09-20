@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   get "/tweets" => "tweets#index"
   get "/bing_results" => "bing_results#index"
 
+  get "/twitter_users" => "twitter_users#index"
+
 end

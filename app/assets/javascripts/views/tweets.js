@@ -12,6 +12,8 @@ var TweetsView = Backbone.View.extend({
   },
 
   addAll: function() {
+    $("#one-degree-container").css("display", "block")
+
     $("#temporary-container").empty();
     return this.collection.each(function(tweet) {
       return this.addOne(tweet);
