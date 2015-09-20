@@ -26,11 +26,11 @@ class Link
         raise e
       end
     end
+
     doc = Oga.parse_html(body)
-    html_title = doc.at_css('title').text
-    html_title
+
     if doc.at_css('title') != nil
-      html_title = doc.at_css('title').text
+      return doc.at_css('title').text
     else
       return @url
     end

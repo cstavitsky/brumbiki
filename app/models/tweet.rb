@@ -30,7 +30,7 @@ class Tweet
     links = self.tweet_links(tweet)
 
     {
-      embedded_tweet: self.client.oembed("#{tweet.id}").html,
+      embedded_tweet: Clientable.client.oembed("#{tweet.id}").html,
       target_id: tweet.user.id,
       target_handle: tweet.user.screen_name,
       target_name: tweet.user.name,
