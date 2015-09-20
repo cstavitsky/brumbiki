@@ -80,5 +80,9 @@ nav {
 }
 
 .active-keyword {
-  border: 1px solid red
+  border: 1px solid red;
+}
+
+.tweet {
+  border: 1px solid red;
 }
