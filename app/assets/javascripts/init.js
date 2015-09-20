@@ -43,7 +43,6 @@ $(document).ready(function() {
   });
 
   $("#temporary-container").on("click", ".keyword", function(event){
-
     var twitterHandle = $("#search-bar").val();
 
     event.preventDefault();
@@ -52,6 +51,9 @@ $(document).ready(function() {
       var index = keywords.indexOf(value);
       keywords.splice(index, 1)
       $(this).removeClass("active-keyword")
+      if(keywords.length === 0 || keywords.first === ""){
+      $("#search-results-container").empty();
+    }
     } else {
       $(this).addClass("active-keyword");
       keywords.push(value);
