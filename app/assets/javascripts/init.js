@@ -1,5 +1,6 @@
 $(document).ready(function() {
   var keywords = []
+  var tweet = ""
   $("#keyword-search-container").hide();
 
   var tweets = new TweetsCollection();
@@ -43,9 +44,14 @@ $(document).ready(function() {
   });
 
   $("#temporary-container").on("click", ".keyword", function(event){
-    var twitterHandle = $("#search-bar").val();
-
     event.preventDefault();
+    var twitterHandle = $("#search-bar").val();
+    if($(this).closest(".tweet")[0] != tweet[0]){
+      keywords = []
+      $(".keyword").removeClass("active-keyword")
+    }
+    console.log(tweet)
+    tweet = $(this).closest(".tweet")
     var value = $(this).val();
     if(keywords.indexOf(value) > -1){
       var index = keywords.indexOf(value);
