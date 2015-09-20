@@ -1,6 +1,8 @@
 class Tweet
 
   def initialize(attributes)
+    @handle = attributes[:handle]
+    @target_id = attributes[:target_id]
     @created_at = attributes[:created_at]
     @urls = attributes[:urls]
     @user_mentions = attributes[:user_mentions]
