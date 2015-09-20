@@ -1,6 +1,7 @@
 class Tweet
 
   def initialize(attributes)
+    @embedded_tweet = attributes[:embedded_tweet]
     @target_handle = attributes[:handle]
     @target_id = attributes[:target_id]
     @created_at = attributes[:created_at]
@@ -31,6 +32,7 @@ class Tweet
     links = self.tweet_links(tweet)
 
     {
+      embedded_tweet: self.client.oembed("#{tweet.id}").html,
       target_handle: tweet.user.screen_name,
       target_id: tweet.user.id,
       created_at: tweet.created_at,
