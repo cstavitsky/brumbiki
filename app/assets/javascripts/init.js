@@ -43,6 +43,9 @@ $(document).ready(function() {
   });
 
   $("#temporary-container").on("click", ".keyword", function(event){
+
+    var twitterHandle = $("#search-bar").val();
+
     event.preventDefault();
     var value = $(this).val();
     if(keywords.indexOf(value) > -1){
@@ -60,7 +63,7 @@ $(document).ready(function() {
     if (query.length > 0){
       results.fetch({
           reset: true,
-          data: $.param({ query: query })
+          data: $.param({ query: query, handle: twitterHandle })
       });
     };
   });
@@ -73,6 +76,15 @@ $(document).ready(function() {
     twitterUsers.fetch({
       reset: true
     });
+  })
+
+  $("#twitter-button").on("click", function(event){
+    event.preventDefault();
+    var twitterHandle = $("#search-bar").val();
+    // if (twitterHandle.match(/^[@]/)){
+
+    // }
+    $(this).attr('href').append(twitterHandle)
   });
 
 });
