@@ -38,7 +38,7 @@ class Tweet
       text: self.tweet_text(tweet),
       user_profile_image_url: self.profile_image_url(tweet),
       links: links,
-      text_keywords: self.text_keywords(tweet),
+      text_keywords: self.text_keywords(tweet_text(tweet)),
       title_keywords: self.title_keywords(links)
     }
   end
@@ -69,8 +69,8 @@ class Tweet
     urls.map { |url| Link.new(url) }
   end
 
-  def self.text_keywords(tweet)
-    tweet.text.keywords.rank.map { |word| word.text }
+  def self.text_keywords(tweet_text)
+    tweet_text.keywords.rank.map { |word| word.text }
   end
 
   def self.title_keywords(links)
