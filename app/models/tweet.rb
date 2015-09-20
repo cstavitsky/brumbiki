@@ -11,13 +11,19 @@ class Tweet
     @title_keywords = attributes[:title_keywords]
   end
 
+  def self.prune_tweet(tweet_text)
+    words = tweet_text.split(" ")
+    words.delete_if { |word| word.match(/^\s*(#|$)|\b(http.*)\b/) }
+    words.join(" ")
+  end
+
   def self.all_tweets(handle)
     self.client.user_timeline(handle, { count: 40, include_rts: false }).map do |tweet|
       p tweet.user_mentions
       created_at = tweet.created_at
       urls = self.expanded_urls(tweet)
       link_titles = self.scrape_urls_for_titles(urls)
-      text = tweet.text
+      text = self.prune_tweet(tweet.text)
       if link_titles.length == 0
         # do nothing
       else
@@ -39,6 +45,8 @@ class Tweet
   def self.scrape_urls_for_titles(urls)
     urls.map { |url| Link.new(url) }
   end
+
+
 
   protected
 
