@@ -1,10 +1,14 @@
 <li class="search-result">
     <div class="result-content">
-
       <p>
-        <a href="<%= url %>"><%= title %></a>
+        <a href="<%= url %>" target="_blank"><%= title %></a>
         <br>
         <span class="description"><%= description %></span>
+        <br>
+
+        <a id="twitter-button" href="https://twitter.com/share?url=<%=url%>&text=Check this out! <%=handle%>" data-url="<%=url%>" class="twitter-share-button">TWEET THIS TO <%=handle%></a>
+
+
       </p>
     </div>
   </li>
