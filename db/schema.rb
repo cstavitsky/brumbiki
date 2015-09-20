@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20150917214332) do
     t.string   "token"
     t.string   "secret"
     t.string   "profile_image"
+    t.text     "target_tweets"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end

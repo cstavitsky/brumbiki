@@ -7,6 +7,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :token
       t.string :secret
       t.string :profile_image
+      t.text :target_tweets
 
       t.timestamps null: false
     end
