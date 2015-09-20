@@ -1,15 +1,15 @@
-<% if (urls.length > 0){ %>
+<% if (links.length > 0){ %>
   <li class="tweet">
     <img class="profile-pic" src="<%= user_profile_image_url %>" alt="">
     <div class="tweet-content">
       <p>
         <h1><span class="test"><%= text %></span>
         <br>
-        <a href="<%= link_titles[0].url %>" class="test"><%= link_titles[0].title %></a>
+        <a href="<%= links[0].url %>" class="test"><%= links[0].title %></a>
       </p>
       <ul class="result-keywords">
-          <% for (var i=0; i< keywords.length; i++) { %>
-            <li><input class="keyword" type="submit" value="<%=keywords[i]%>"></li>
+          <% for (var i=0; i< text_keywords.length; i++) { %>
+            <li><input class="keyword" type="submit" value="<%=text_keywords[i]%>"></li>
         <% } %>
       </ul>
        <ul class="tweet-keywords">
