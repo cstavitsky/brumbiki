@@ -9,6 +9,13 @@ nav {
   top: 0;
   left: 0;
   background-color: #3F51B5;
+  z-index: 1;
+}
+
+#one-degree-container {
+  position: relative;
+  margin-top: 100px;
+  display: none;
 }
 
 #search-container {
@@ -62,5 +69,3 @@ nav {
 .active-keyword {
   border: 1px solid red
 }
-
-

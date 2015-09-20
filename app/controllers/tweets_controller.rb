@@ -1,7 +1,8 @@
 class TweetsController < ApplicationController
 
   def index
-    render json: Tweet.all_tweets(params[:handle]).to_json
+    @tweets = Tweet.all_tweets(params[:handle])
+    render json: @tweets
   end
 
 end

@@ -30,19 +30,17 @@ $(document).ready(function() {
   });
 
   $("#link-search-button").on("click", function(event){
-      event.preventDefault();
+    event.preventDefault();
 
-      var query = $("#link-search-bar").val();
-      var results = new SearchResultsCollection();
-      var resultsCollectionView = new SearchResultsView({ collection: results});
+    var query = $("#link-search-bar").val();
+    var results = new SearchResultsCollection();
+    var resultsCollectionView = new SearchResultsView({ collection: results});
 
-      results.fetch({
-          reset: true,
-          data: $.param({ query: query })
-      });
-  })
-
-
+    results.fetch({
+      reset: true,
+      data: $.param({ query: query })
+    });
+  });
 
   $("#temporary-container").on("click", ".keyword", function(event){
     event.preventDefault();
@@ -64,10 +62,17 @@ $(document).ready(function() {
           reset: true,
           data: $.param({ query: query })
       });
-    }
+    };
+  });
 
+  $("#one-degree-container").on("click", function(event) {
+    event.preventDefault();
 
-  })
+    var twitterUsers = new TwitterUsersCollection();
 
+    twitterUsers.fetch({
+      reset: true
+    });
+  });
 
 });
