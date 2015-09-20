@@ -4,7 +4,7 @@ class Tweet
   attr_reader :target_id, :target_handle, :target_name, :user_mentions, :target_profile_image_url
 
   def initialize(attributes)
-    @embedded_tweet = attributes[:embedded_tweet]
+    # @embedded_tweet = attributes[:embedded_tweet]
     @target_id = attributes[:target_id]
     @target_handle = attributes[:handle]
     @target_name = attributes[:target_name]
@@ -30,7 +30,7 @@ class Tweet
     links = self.tweet_links(tweet)
 
     {
-      embedded_tweet: self.client.oembed("#{tweet.id}").html,
+      # embedded_tweet: Clientable.client.oembed("#{tweet.id}").html,
       target_id: tweet.user.id,
       target_handle: tweet.user.screen_name,
       target_name: tweet.user.name,
