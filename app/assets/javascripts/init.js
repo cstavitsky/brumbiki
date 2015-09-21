@@ -6,8 +6,13 @@ $(document).ready(function() {
   var tweets = new TweetsCollection();
   var tweetsView = new TweetsView({ collection: tweets });
 
-  $("#search-button").on("click", function(event) {
+  $("form").on("submit", function(event) {
     event.preventDefault();
+
+    $("#current-target-container").empty();
+    $("#third-degree-container").empty();
+    $("#welcome-container").fadeOut("slow");
+    $("#top-container").animate({ height: "250" }, 2500);
 
     var twitterHandle = $("#search-bar").val();
 
@@ -16,18 +21,6 @@ $(document).ready(function() {
       data: $.param({ handle: twitterHandle })
     });
     $("#search-results-container").empty();
-  });
-
-  $("#search-container input").on("keyup", function(event) {
-    event.preventDefault();
-    var twitterHandle = $("#search-bar").val();
-    if (event.which === 13){
-    tweets.fetch({
-      reset: true,
-      data: $.param({ handle: twitterHandle })
-    });
-      $("#search-results-container").empty();
-    }
   });
 
   $("#link-search-button").on("click", function(event){
@@ -91,6 +84,8 @@ $(document).ready(function() {
 
   $("#one-degree-button").on("click", function(event) {
     event.preventDefault();
+
+    $("#top-container").animate({ height: "500" }, 1000);
 
     var twitterUsers = new TwitterUsersCollection();
     var twitterUsersView = new TwitterUsersView({ collection: twitterUsers });
