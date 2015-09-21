@@ -1,0 +1,57 @@
+#content-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  padding: 0;
+}
+
+#tweets-container {
+  float: left;
+  left: 30%;
+  width: 40%;
+  height: 100%;
+  /*background-color: white;*/
+}
+
+#tweet-container {
+  /*width: 100%;*/
+  /*height: 100%;*/
+  margin-bottom: 30px;
+  background-color: white;
+}
+
+.keyword {
+  height: 25px;
+  padding: 0 8px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background-color: #1A237E;
+}
+
+.active-keyword {
+  height: 25px;
+  padding: 0 8px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background-color: red;
+}
+
+.target-name {
+  display: inline-block;
+}
+
+#search-results-container {
+  float: right;
+  top: 0;
+  right: 0;
+  width: 40%;
+  height: 100%;
+  background-color: #d2d2d2;
+}
+
+/*.tweet {
+  border: 1px solid red;
+}*/
