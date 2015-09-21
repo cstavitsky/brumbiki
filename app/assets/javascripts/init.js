@@ -19,7 +19,6 @@ $(document).ready(function() {
     $("#secondary-container").empty();
     $("#tertiary-container").empty();
     $("#tweets-container").empty();
-    $("#tweets-container").empty();
     $("#welcome-container").fadeOut("slow");
     $("#top-container").animate({ height: "250" }, 2500);
 
