@@ -1,3 +1,4 @@
+
 $(document).ready(function() {
   var keywords = []
   var tweet = ""
@@ -6,6 +7,8 @@ $(document).ready(function() {
 
   var tweets = new TweetsCollection();
   var tweetsView = new TweetsView({ collection: tweets });
+
+  $("#keyword-search-container").hide();
 
   $("form").on("submit", function(event) {
     event.preventDefault();
@@ -24,33 +27,7 @@ $(document).ready(function() {
     $("#search-results-container").empty();
   });
 
-  $("#link-search-button").on("click", function(event){
-    event.preventDefault();
-
-    var query = $("#link-search-bar").val();
-    var results = new SearchResultsCollection();
-    var resultsCollectionView = new SearchResultsView({ collection: results});
-
-    results.fetch({
-      reset: true,
-      data: $.param({ query: query })
-    });
-  });
-
-  $("#link-search-button").on("click", function(event){
-    event.preventDefault();
-
-    var query = $("#link-search-bar").val();
-    var results = new SearchResultsCollection();
-    var resultsCollectionView = new SearchResultsView({ collection: results});
-
-    results.fetch({
-      reset: true,
-      data: $.param({ query: query })
-    });
-  });
-
- function toggleKeyword (keywordButton){
+ function toggleKeyword(keywordButton) {
   if($(keywordButton).closest(".tweet")[0] != tweet[0]){
       keywords = []
       console.log($(keywordButton))
@@ -111,3 +88,18 @@ $(document).ready(function() {
 
 
 });
+
+// $(function () {
+//                 $(".profile-circles").draggable();
+//                 $(".profile-circles").droppable({
+//                         drop: function (event, ui) {
+//                                 $("#top-container").html("dropped!");
+//                         },
+//                         over: function (event, ui) {
+//                                 $("#top-container").html("moving in!");
+//                         },
+//                         out: function (event, ui) {
+//                                 $("#top-container").html("moving out!");
+//                         }
+//                 });
+//         });
