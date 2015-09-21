@@ -1,6 +1,7 @@
 $(document).ready(function() {
   var keywords = []
   var tweet = ""
+
   $("#keyword-search-container").hide();
 
   var tweets = new TweetsCollection();
@@ -97,9 +98,16 @@ $(document).ready(function() {
     var twitterUsers = new TwitterUsersCollection();
     var twitterUsersView = new TwitterUsersView({ collection: twitterUsers });
 
+
     twitterUsers.fetch({
       reset: true
     });
   })
+
+  $("#current-target-container").on("click", ".profile-circles", function(event){
+    event.preventDefault()
+    $(".profile-circles").draggable();
+  })
+
 
 });
