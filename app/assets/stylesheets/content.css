@@ -1,6 +1,6 @@
 #content-container {
   position: relative;
-  width: 100%;
+  width: 80%;
   height: 100%;
   margin: auto;
   padding: 0;
@@ -8,22 +8,23 @@
 
 #tweets-container {
   float: left;
-  left: 30%;
-  width: 40%;
   height: 100%;
-  /*background-color: white;*/
+  width: 40%;
 }
 
-#tweet-container {
-  /*width: 100%;*/
-  /*height: 100%;*/
+.tweet-container {
+  width: 90%;
+  padding: 12px;
+  margin: auto;
   margin-bottom: 30px;
   background-color: white;
+  border-radius: 5px;
 }
 
 .keyword {
   height: 25px;
   padding: 0 8px;
+  margin-top: 8px;
   border: none;
   border-radius: 5px;
   color: white;
@@ -45,13 +46,26 @@
 
 #search-results-container {
   float: right;
-  top: 0;
-  right: 0;
-  width: 40%;
   height: 100%;
-  background-color: #d2d2d2;
+  width: 50%;
 }
 
-/*.tweet {
-  border: 1px solid red;
-}*/
+.search-result-container {
+  height: 100%;
+  width: 90%;
+  padding: 12px;
+  margin: auto;
+  margin-bottom: 30px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+#search-result-link {
+}
+
+#search-result-description {
+}
+
+#search-result-tweet-to {
+  font-style: italic;
+}

@@ -1,7 +1,12 @@
 class TwitterUsersController < ApplicationController
 
   def index
-    attributes = { uid: current_user.uid, name: current_user.name, profile_image: current_user.profile_image }
+    attributes = {  uid: current_user.uid,
+                    name: current_user.name,
+                    profile_image: current_user.profile_image,
+                    handle: current_user.handle,
+                    location: current_user.location,
+                    description: current_user.description}
     current_twitter_user = TwitterUser.new(attributes)
     target_twitter_user = TwitterUser.locate_target(current_user.target_tweets)
     target_mention_ids = TwitterUser.mention_ids(current_user.target_tweets)
