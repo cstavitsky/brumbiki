@@ -50,29 +50,36 @@ $(document).ready(function() {
     });
   });
 
-  $("#tweets-container").on("click", ".keyword", function(event){
-    event.preventDefault();
-    var twitterHandle = $("#search-bar").val();
-    if($(this).closest(".tweet")[0] != tweet[0]){
+ function toggleKeyword (keywordButton){
+  if($(keywordButton).closest(".tweet")[0] != tweet[0]){
       keywords = []
+      console.log($(keywordButton))
       $(".keyword").removeClass("active-keyword")
     }
-    console.log(tweet)
-    tweet = $(this).closest(".tweet")
-    var value = $(this).val();
-    if(keywords.indexOf(value) > -1){
-      var index = keywords.indexOf(value);
-      keywords.splice(index, 1)
-      $(this).removeClass("active-keyword")
-      if(keywords.length === 0 || keywords.first === ""){
-      $("#search-results-container").empty();
-    }
-    } else {
-      $(this).addClass("active-keyword");
-      keywords.push(value);
-    }
-    var query = keywords.join(' ')
+  };
 
+  function removeKeyword(keywordButton) {
+    tweet = $(keywordButton).closest(".tweet")
+      var value = $(keywordButton).val();
+      if(keywords.indexOf(value) > -1){
+        var index = keywords.indexOf(value);
+        keywords.splice(index, 1)
+        $(keywordButton).removeClass("active-keyword")
+        if(keywords.length === 0 || keywords.first === ""){
+        $("#search-results-container").empty();
+      }
+      } else {
+        $(keywordButton).addClass("active-keyword");
+        keywords.push(value);
+      }
+    }
+
+  $("#tweets-container").on("click", ".keyword", function(event){
+      event.preventDefault();
+    var twitterHandle = $("#search-bar").val();
+    toggleKeyword(this)
+    removeKeyword(this)
+    var query = keywords.join(' ')
     var results = new SearchResultsCollection();
     var resultsCollectionView = new SearchResultsView({ collection: results});
     if (query.length > 0){
@@ -95,16 +102,6 @@ $(document).ready(function() {
       reset: true
     });
   })
-
-  $("#twitter-button").on("click", function(event){
-    event.preventDefault();
-    var twitterHandle = $("#search-bar").val();
-    // if (twitterHandle.match(/^[@]/)){
-
-    // }
-    $(this).attr('href').append(twitterHandle)
-  });
-
 
 });
 
