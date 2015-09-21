@@ -5,9 +5,25 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
-
   </head>
   <body>
+
+    <nav>
+      <% if current_user %>
+      <span class="navbar-text navbar-right">Signed in as <%=current_user.name %></span>
+        <a href="/logout">Logout</a>
+      <% else %>
+        <a href="/auth/twitter">Login with Twitter</a>
+      <% end %>
+
+      <div id="search-container">
+        <%= form_tag do %>
+          <input id="search-bar" name="search-bar" type="text" placeholder="@username">
+          <input id="search-button" type="submit" value="Go!">
+        <% end %>
+      </div>
+    </nav>
+
     <%= yield %>
   </body>
 </html>
