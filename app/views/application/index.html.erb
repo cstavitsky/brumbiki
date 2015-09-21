@@ -1,19 +1,9 @@
-<nav>
-  <% if current_user %>
-  <span class="navbar-text navbar-right">Signed in as <%=current_user.name %></span>
-    <a href="/logout">Logout</a>
-  <% else %>
-    <a href="/auth/twitter">Login with Twitter</a>
-  <% end %>
-
-  <div id="search-container">
-    <input id="search-bar" name="search-bar" type="text" placeholder="@username">
-    <input id="search-button" type="submit" value="Go!">
-  </div>
-</nav>
-
 <div id="top-container">
-  <div id="welcome-container"></div>
+  <div id="welcome-container">
+    <h1>brumbiki</h1>
+    <h3>WELCOME</h3>
+    <h5>This application will help you set the table for thoughtful conversation with people you hope to interact with.</h5>
+  </div>
 
   <div id="one-degree-button-container">
     <button id="one-degree-button">See Your Web of Influence</button>
