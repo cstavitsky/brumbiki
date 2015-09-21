@@ -4,6 +4,9 @@ class CreateUsers < ActiveRecord::Migration
       t.string :provider
       t.string :uid
       t.string :name
+      t.text :description
+      t.string :location
+      t.string :handle
       t.string :token
       t.string :secret
       t.string :profile_image
