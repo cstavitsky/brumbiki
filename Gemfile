@@ -47,6 +47,8 @@ gem 'highscore'
 
 gem 'metainspector'
 
+gem 'newrelic_rpm'
+
 # Use to push/pull via Rake tasks for dotenv
 # gem 'dotenv-heroku'
 
