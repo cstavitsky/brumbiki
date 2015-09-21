@@ -8,10 +8,11 @@ var TwitterUsersView = Backbone.View.extend({
     var twitterUserView = new TwitterUserView({model: twitterUser});
     twitterUserView.render();
 
-    if (twitterUser.attributes.user_type != "tertiary") {
+    if (twitterUser.attributes.user_type === "primary") {
       $("#current-target-container").append(twitterUserView.el);
       $("#current-target-container").append(twitterUserView.el);
-    } else {
+    }
+    else {
       $("#third-degree-container").append(twitterUserView.el);
     }
 
