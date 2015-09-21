@@ -37,7 +37,8 @@
   display: inline
 }
 
-#target-container {
+#tertiary-container {
+  float: right;
   margin: 80px;
   width: 150px;
 }
@@ -52,12 +53,6 @@
   margin: 80px;
   width: 150px;
   background-color: red;
-}
-
-#tertiary-container {
-  margin: 80px;
-  width: 250px;
-  background-color: yellow;
 }
 
 .profile-circles {
