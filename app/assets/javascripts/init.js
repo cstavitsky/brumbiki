@@ -1,10 +1,10 @@
 $(document).ready(function() {
   var keywords = []
   var tweet = ""
-  $("#keyword-search-container").hide();
-
   var tweets = new TweetsCollection();
   var tweetsView = new TweetsView({ collection: tweets });
+
+  $("#keyword-search-container").hide();
 
   $("form").on("submit", function(event) {
     event.preventDefault();
@@ -23,31 +23,18 @@ $(document).ready(function() {
     $("#search-results-container").empty();
   });
 
-  $("#link-search-button").on("click", function(event){
-    event.preventDefault();
-
-    var query = $("#link-search-bar").val();
-    var results = new SearchResultsCollection();
-    var resultsCollectionView = new SearchResultsView({ collection: results});
-
-    results.fetch({
-      reset: true,
-      data: $.param({ query: query })
-    });
-  });
-
-  $("#link-search-button").on("click", function(event){
-    event.preventDefault();
-
-    var query = $("#link-search-bar").val();
-    var results = new SearchResultsCollection();
-    var resultsCollectionView = new SearchResultsView({ collection: results});
-
-    results.fetch({
-      reset: true,
-      data: $.param({ query: query })
-    });
-  });
+  // $("#link-search-button").on("click", function(event){
+  //   event.preventDefault();
+  //
+  //   var query = $("#link-search-bar").val();
+  //   var results = new SearchResultsCollection();
+  //   var resultsCollectionView = new SearchResultsView({ collection: results});
+  //
+  //   results.fetch({
+  //     reset: true,
+  //     data: $.param({ query: query })
+  //   });
+  // });
 
   $("#tweets-container").on("click", ".keyword", function(event){
     event.preventDefault();
