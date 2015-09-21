@@ -27,15 +27,37 @@
   height: 500px;
 }
 
-#current-target-container {
+#current-container {
   margin: 80px;
   float: left;
+  width: 100px;
 }
 
-#third-degree-container {
-  float: right;
+.user-type-container{
+  display: inline
+}
+
+#target-container {
   margin: 80px;
-  width: 100px;
+  width: 150px;
+}
+
+#primary-container {
+  margin: 80px;
+  width: 150px;
+  background-color: blue;
+}
+
+#secondary-container {
+  margin: 80px;
+  width: 150px;
+  background-color: red;
+}
+
+#tertiary-container {
+  margin: 80px;
+  width: 250px;
+  background-color: yellow;
 }
 
 .profile-circles {

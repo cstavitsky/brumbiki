@@ -9,13 +9,13 @@ class TwitterUser
     @name = attributes[:name]
     @profile_image = attributes[:profile_image]
     @user_type = attributes.fetch(:user_type, "current")
-    @bio = attributes[:bio]
+    @description = attributes[:description]
   end
 
   def self.locate_target(tweets)
     tweet = tweets.first
 
-    TwitterUser.new(uid: tweet.target_id, handle: tweet.target_handle, name: tweet.target_name, profile_image: tweet.target_profile_image_url, bio: tweet.target_description, user_type: "target")
+    TwitterUser.new(uid: tweet.target_id, handle: tweet.target_handle, name: tweet.target_name, profile_image: tweet.target_profile_image_url, description: tweet.target_description, user_type: "target")
   end
 
   def self.mention_ids(tweets)
@@ -26,7 +26,7 @@ class TwitterUser
 
   def self.ids_to_twitter_users(ids, user_type)
     Clientable.client.users(ids).map do |user|
-      TwitterUser.new(uid: user.id, handle: user.screen_name, name: user.name, profile_image: user.profile_image_url.to_s, user_type: user_type, bio: user.description)
+      TwitterUser.new(uid: user.id, handle: user.screen_name, name: user.name, profile_image: user.profile_image_url.to_s, user_type: user_type, description: user.description)
     end
   end
 
