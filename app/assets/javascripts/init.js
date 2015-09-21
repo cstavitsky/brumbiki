@@ -26,7 +26,7 @@ $(document).ready(function() {
       reset: true,
       data: $.param({ handle: twitterHandle })
     });
-    $("#search-results-container").empty();
+      $("#search-results-container").empty();
     }
   });
 
@@ -56,7 +56,7 @@ $(document).ready(function() {
     });
   });
 
-  $("#temporary-container").on("click", ".keyword", function(event){
+  $("#tweets-container").on("click", ".keyword", function(event){
     event.preventDefault();
     var twitterHandle = $("#search-bar").val();
     if($(this).closest(".tweet")[0] != tweet[0]){
@@ -89,10 +89,11 @@ $(document).ready(function() {
     };
   });
 
-  $("#one-degree-container").on("click", function(event) {
+  $("#one-degree-button").on("click", function(event) {
     event.preventDefault();
 
     var twitterUsers = new TwitterUsersCollection();
+    var twitterUsersView = new TwitterUsersView({ collection: twitterUsers });
 
     twitterUsers.fetch({
       reset: true

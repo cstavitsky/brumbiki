@@ -1,5 +1,7 @@
 body {
   background-color: #E8EAF6;
+  width: 100%;
+  margin: 0;
 }
 
 nav {
@@ -12,10 +14,56 @@ nav {
   z-index: 1;
 }
 
-#one-degree-container {
-  position: relative;
+/*#welcome-container {
+  height: 500px;
+  background-color: red;
+  width: 100%;
+  text-align: center;
+}*/
+
+#top-container {
+  width: 100%;
   margin-top: 100px;
+}
+
+#one-degree-button-container {
   display: none;
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background-color: red;
+}
+
+#one-degree-drawing-container {
+  display: none;
+  position: relative;
+  width: 100%;
+  height: 500px;
+  background-color: red;
+}
+
+#current-target-container {
+  margin: 80px;
+  float: left;
+}
+
+#third-degree-container {
+  float: right;
+  margin: 80px;
+  width: 100px;
+}
+
+.profile-circles {
+  margin-bottom: 60px;
+  border-radius: 50%;
+  width: 65px;
+  height: 65px;
+}
+
+#divider {
+  height: 50px;
+  width: 100%;
+  background-color: #3F51B5;
 }
 
 #search-container {
@@ -45,7 +93,7 @@ nav {
   background-color: #1A237E;
 }
 
-#wrapper{
+#content-container {
   position: relative;
   width: 100%;
   height: 100%;
@@ -53,7 +101,7 @@ nav {
   padding: 0;
 }
 
-#temporary-container {
+#tweets-container {
   float: left;
   left: 30%;
   width: 50%;
@@ -62,8 +110,7 @@ nav {
 }
 
 #search-results-container {
-
-  position: fixed;
+  float: right;
   top: 0;
   right: 0;
   width: 50%;
