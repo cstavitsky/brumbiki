@@ -26,7 +26,7 @@ $(document).ready(function() {
       reset: true,
       data: $.param({ handle: twitterHandle })
     });
-    $("#search-results-container").empty();
+      $("#search-results-container").empty();
     }
   });
 
@@ -89,7 +89,7 @@ $(document).ready(function() {
     };
   });
 
-  $("#one-degree-container").on("click", function(event) {
+  $("#one-degree-button").on("click", function(event) {
     event.preventDefault();
 
     var twitterUsers = new TwitterUsersCollection();

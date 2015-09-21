@@ -8,11 +8,13 @@ var TwitterUsersView = Backbone.View.extend({
     var twitterUserView = new TwitterUserView({model: twitterUser});
     twitterUserView.render();
 
-    $("#one-degree-container").append(twitterUserView.el);
+    $("#one-degree-drawing-container").append(twitterUserView.el);
+    $("#one-degree-drawing-container").css("display", "block");
   },
 
   addAll: function() {
-    $("#one-degree-container").empty();
+    $("#one-degree-button-container").css("display", "none");
+    
     return this.collection.each(function(twitterUser) {
       return this.addOne(twitterUser);
     }, this);
