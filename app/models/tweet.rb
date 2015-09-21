@@ -1,13 +1,14 @@
 class Tweet
   include Clientable
 
-  attr_reader :target_id, :target_handle, :target_name, :user_mentions, :target_profile_image_url
+  attr_reader :target_id, :target_handle, :target_name, :user_mentions, :target_profile_image_url, :target_description
 
   def initialize(attributes)
     # @embedded_tweet = attributes[:embedded_tweet]
     @target_id = attributes[:target_id]
     @target_handle = attributes[:handle]
     @target_name = attributes[:target_name]
+    @target_description = attributes[:target_description]
     @created_at = attributes[:created_at]
     @user_mentions = attributes[:user_mentions]
     @text = attributes[:text]
@@ -34,6 +35,7 @@ class Tweet
       target_id: tweet.user.id,
       target_handle: tweet.user.screen_name,
       target_name: tweet.user.name,
+      target_description: tweet.user.description,
       created_at: tweet.created_at,
       user_mentions: tweet.user_mentions,
       text: text,
