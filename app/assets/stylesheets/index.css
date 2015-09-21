@@ -19,6 +19,9 @@ nav {
   height: 550px;
   width: 100%;
   margin-top: 100px;
+  background-image: url("http://www.psdgraphics.com/file/abstract-mosaic-background.png");
+  background-size: 100%;
+  z-index: -1;
 }
 
 #welcome-container {
@@ -26,10 +29,12 @@ nav {
   top: 50%;
   transform: translateY(-50%);
   text-align: center;
+  color: white;
 }
 
 #divider {
   height: 50px;
   width: 100%;
+  margin-bottom: 60px;
   background-color: #3F51B5;
 }
