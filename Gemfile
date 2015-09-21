@@ -46,6 +46,9 @@ gem 'highscore'
 
 gem 'metainspector'
 
+# Use to push/pull via Rake tasks for dotenv
+# gem 'dotenv-heroku'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
