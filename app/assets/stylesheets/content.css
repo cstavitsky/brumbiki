@@ -18,7 +18,19 @@
   margin: auto;
   margin-bottom: 30px;
   background-color: white;
-  border-radius: 5px;
+  border-radius: 10px;
+}
+
+.profile-pic {
+  border-radius: 50%;
+}
+
+.target-name {
+  display: inline-block;
+}
+
+.target-handle {
+  display: inline-block;
 }
 
 .keyword {
@@ -38,10 +50,6 @@
   border-radius: 5px;
   color: white;
   background-color: red;
-}
-
-.target-name {
-  display: inline-block;
 }
 
 #search-results-container {
