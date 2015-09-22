@@ -23,12 +23,27 @@
 
 .keyword {
   height: 25px;
-  padding: 0 8px;
   margin-top: 8px;
   border: none;
   border-radius: 5px;
   color: white;
   background-color: #1A237E;
+}
+
+#keyword-container {
+  height: 35px;
+  width: 400px;
+  margin-left: 600px
+}
+
+.keyword-tracker {
+  height: 25px;
+  padding: 0 8px;
+  margin-top: 8px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background-color: red;
 }
 
 .active-keyword {
@@ -43,6 +58,8 @@
 .target-name {
   display: inline-block;
 }
+
+
 
 #search-results-container {
   float: right;
