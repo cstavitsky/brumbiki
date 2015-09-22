@@ -34,7 +34,7 @@ class TwitterUser
 
     ids = primary_ids + secondary_ids + tertiary_ids
 
-    connection_ids = ids.zip(user_types).to_h
+    connection_ids = Hash[ids.zip(user_types)]
 
     self.ids_to_twitter_users(connection_ids)
   end
