@@ -3,5 +3,5 @@
 
   <p id="search-result-description"><%= description %></p>
 
-  <a id="search-result-tweet-to" href="https://twitter.com/share?url=<%=url%>&text=Check this out! <%=handle%>" data-url="<%=url%>" class="twitter-share-button" target="_blank">TWEET THIS TO <%=handle%></a>
+  <a id="search-result-tweet-to" href="https://twitter.com/share?url=<%=url%>&text=Check this out! <%=handle%>" data-url="<%=url%>" class="twitter-share-button" onClick='showPopup(this.href);return(false);'>TWEET THIS TO <%=handle%></a>
 </div>
