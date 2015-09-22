@@ -6,6 +6,7 @@ nav {
   left: 0;
   background-color: white;
   z-index: 1;
+  border-bottom: 1px solid grey;
 }
 
 #top-container {
@@ -26,8 +27,8 @@ nav {
 }
 
 #divider {
-  height: 1px;
+  height: 2px;
   width: 100%;
   margin-bottom: 60px;
-  background-color: grey;
+  background-color: #6CD9F8;
 }

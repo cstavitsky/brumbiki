@@ -13,10 +13,10 @@ $(document).ready(function() {
     event.preventDefault();
 
     $("#one-degree-drawing-container").fadeOut("slow");
-    $("#target-container").empty();
-    $("#primary-container").empty();
-    $("#secondary-container").empty();
-    $("#tertiary-container").empty();
+    $("#target-container").remove("#target-container *:not(.type-text-left)");
+    $("#target-container").remove("#primary-container *:not(.type-text-right)");
+    $("#target-container").remove("#secondary-container *:not(.type-text-left)");
+    $("#target-container").remove("#tertiary-container *:not(.type-text-right)");
     $("#tweets-container").empty();
     $("#welcome-container").fadeOut("slow");
     $("#top-container").animate({ height: "250" }, 2500);
