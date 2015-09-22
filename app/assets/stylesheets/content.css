@@ -1,26 +1,25 @@
 #content-container {
-  position: relative;
-  width: 80%;
-  height: 100%;
-  margin: auto;
-  padding: 0;
+  width: 100%;
+  padding-top: 60px;
+  padding-left: 200px;
+  background-color: white;
 }
 
 #tweets-container {
-  float: left;
   width: 550px;
+  display: inline-block;
 }
 
 .tweet-container {
   padding: 15px;
   border-radius: 10px;
   background-color: white;
-  -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25);
-     -moz-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25);
-          box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25);
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
+  -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25);
+     -moz-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 .profile-pic {
@@ -162,9 +161,8 @@
 }
 
 #search-results-container {
-  float: right;
   height: 100%;
-  width: 50%;
+  width: 550px;
 }
 
 .search-result-container {

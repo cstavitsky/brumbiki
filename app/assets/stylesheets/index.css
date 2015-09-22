@@ -1,9 +1,6 @@
 #top-container {
-  height: 800px;
   width: 100%;
-  margin-top: 100px;
-  background-image: url("brumbikiBackground.png");
-  background-size: 100%;
+  height: 800px;
   z-index: -1;
 }
 
@@ -18,6 +15,5 @@
 #divider {
   height: 1px;
   width: 100%;
-  margin-bottom: 60px;
   background-color: grey;
 }

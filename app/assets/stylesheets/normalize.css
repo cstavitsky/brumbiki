@@ -20,7 +20,9 @@ body {
   margin: 0;
   width: 100%;
   height: 100%;
+  background-size: 100%;
   background-color: white;
+  background-image: url("mountains-background.jpg");
 }
 
 /* HTML5 display definitions
@@ -90,6 +92,7 @@ template {
  */
 
 a {
+  text-decoration: none;
   background-color: transparent;
 }
 
