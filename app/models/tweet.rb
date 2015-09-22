@@ -7,7 +7,7 @@ class Tweet
   def initialize(attributes)
     @tweet_id = attributes[:tweet_id]
     @target_id = attributes[:target_id]
-    @target_handle = attributes[:handle]
+    @target_handle = attributes[:target_handle]
     @target_name = attributes[:target_name]
     @target_description = attributes[:target_description]
     @created_at = attributes[:created_at]

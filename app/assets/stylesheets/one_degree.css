@@ -26,25 +26,19 @@
   display: none;
   position: relative;
   margin: auto;
+  text-align: center;
 }
-
-/*#one-degree-table {
-  width: 100%;
-}*/
-
-/*.degree-rows {
-  height: 25%;
-  width: 100%;
-  border: 1px solid red;
-}*/
-
-/*.test {
-  display: flex;
-  align-items: center;
-}*/
 
 .twitter-user {
   width: 400px;
+  margin: 0 auto;
+  /*border: 1px solid black;*/
+}
+
+#top-row-container {
+  width: 1000px;
+  text-align: center;
+  margin: auto;
 }
 
 #current-container {
