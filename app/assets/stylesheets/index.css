@@ -27,8 +27,8 @@ nav {
 }
 
 #divider {
-  height: 1px;
+  height: 2px;
   width: 100%;
   margin-bottom: 60px;
-  background-color: grey;
+  background-color: #6CD9F8;
 }
