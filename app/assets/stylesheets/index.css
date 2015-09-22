@@ -16,12 +16,12 @@ nav {
 }
 
 #top-container {
-  height: 550px;
+  height: 800px;
   width: 100%;
   margin-top: 100px;
-  /*background-image: url("http://www.psdgraphics.com/file/abstract-mosaic-background.png");*/
-  /*background-size: 100%;*/
-  /*z-index: -1;*/
+  background-image: url("brumbikiBackground.png");
+  background-size: 100%;
+  z-index: -1;
 }
 
 #welcome-container {
@@ -33,8 +33,8 @@ nav {
 }
 
 #divider {
-  height: 50px;
+  height: 1px;
   width: 100%;
   margin-bottom: 60px;
-  background-color: #3F51B5;
+  background-color: grey;
 }

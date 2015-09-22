@@ -12,12 +12,12 @@ $(document).ready(function() {
   $("form").on("submit", function(event) {
     event.preventDefault();
 
-    // $("#current-container").empty();
-    // $("#target-container").empty();
-    // $("#primary-container").empty();
-    // $("#secondary-container").empty();
-    // $("#tertiary-container").empty();
-    // $("#tweets-container").empty();
+    $("#one-degree-drawing-container").fadeOut("slow");
+    $("#target-container").empty();
+    $("#primary-container").empty();
+    $("#secondary-container").empty();
+    $("#tertiary-container").empty();
+    $("#tweets-container").empty();
     $("#welcome-container").fadeOut("slow");
     $("#top-container").animate({ height: "250" }, 2500);
 
@@ -73,6 +73,7 @@ $(document).ready(function() {
   $("#one-degree-button").on("click", function(event) {
     event.preventDefault();
 
+    $("#one-degree-button-container").fadeOut("slow");
     $("#top-container").animate({ height: "500" }, 1000);
 
     var twitterUsers = new TwitterUsersCollection();
