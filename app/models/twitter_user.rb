@@ -26,15 +26,17 @@ class TwitterUser
     primary_ids = self.primary_connections(mentioned_ids, current_user_follower_ids)
     user_types = ["primary"] * primary_ids.length
 
-    secondary_ids = self.secondary_connections(target_twitter_user, current_user_follower_ids)
+    secondary_ids = self.secondary_connections(target_twitter_user, current_user_follower_ids) - primary_ids
     user_types += ["secondary"] * secondary_ids.length
 
-    tertiary_ids = self.tertiary_connections(mentioned_ids)
+    tertiary_ids = self.tertiary_connections(mentioned_ids - primary_ids - secondary_ids)
     user_types += ["tertiary"] * tertiary_ids.length
 
     ids = primary_ids + secondary_ids + tertiary_ids
 
-    self.ids_to_twitter_users(ids, user_types)
+    connection_ids = ids.zip(user_types).to_h
+
+    self.ids_to_twitter_users(connection_ids)
   end
 
   def mentioned_ids(tweets)
@@ -69,9 +71,9 @@ class TwitterUser
     top_three_mentioned_ids
   end
 
-  def ids_to_twitter_users(ids, user_types)
-    Clientable.client.users(ids).map.with_index do |user, index|
-      TwitterUser.new(uid: user.id, handle: user.screen_name, name: user.name, profile_image: user.profile_image_url.to_s, user_type: user_types[index], description: user.description)
+  def ids_to_twitter_users(connection_ids)
+    Clientable.client.users(connection_ids.keys).map do |user|
+      TwitterUser.new(uid: user.id, handle: user.screen_name, name: user.name, profile_image: user.profile_image_url.to_s, user_type: connection_ids[user.id], description: user.description)
     end
   end
 
