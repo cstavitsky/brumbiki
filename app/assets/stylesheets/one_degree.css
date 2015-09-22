@@ -10,14 +10,16 @@
   text-decoration: none;
   border-radius: 5px;
   border: 0;
-  height: 30px;
-  width: 200px;
+  height: 60px;
+  width: 300px;
   padding: 8px 16px;
   position: relative;
   top: calc(50% + 15px);
-  left: calc(50% - 100px);
+  left: calc(50% - 150px);
   transform: translateY(-50%);
   text-align: center;
+  background-color: #6CD9F8;
+  color: white;
 }
 
 #one-degree-drawing-container {
@@ -30,47 +32,43 @@
   background-color: rgba(255, 255, 255, 0.75);
 }
 
+.type-containers {
+  width: 80%;
+  margin: auto;
+  position: relative;
+  height: 25%;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid grey;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#target-container {
+  border-bottom: 2px solid #6CD9F8;
+}
+
+#primary-container {
+  border-bottom: 2px solid #6CD9F8;
+}
+
+#secondary-container {
+  border-bottom: 2px solid #6CD9F8;
+}
+
+#tertiary-container {
+  border-bottom: none;
+}
+
 .twitter-user {
   width: 400px;
   margin: 0 auto;
 }
 
-.type-containers {
-  width: 80%;
-  margin: auto;
-}
-
-#target-container {
-  height: 120px;
-  display: flex;
-  align-items: center;
-}
-
-#primary-container {
-  height: 120px;
-  display: flex;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 10px;
-}
-
-#secondary-container {
-  height: 120px;
-  display: flex;
-  align-items: center;
-}
-
-#tertiary-container {
-  height: 120px;
-  display: flex;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 10px;
-}
-
 .profile-circles {
-  height: 65px;
-  width: 65px;
+  height: 55px;
+  width: 55px;
   border-radius: 50%;
 }
 
@@ -84,16 +82,34 @@
 }
 
 #twitter-user-name {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-#twitter-user-handle {
-  font-size: 18px;
-  font-style: italic;
-  text-decoration: none;
+  font-weight: 600;
 }
 
 #twitter-user-handle a {
+  color: #9B9B9B;
+  font-weight: 400;
   text-decoration: none;
+}
+
+.type-text-left {
+  padding: 5px 12px 5px 12px;
+  margin-bottom: 0;
+  position: absolute;
+  bottom: 0;
+  font-weight: 300;
+  background-color: #6CD9F8;
+  border-radius: 5px 5px 0px 0px;
+  color: white;
+}
+
+.type-text-right {
+  right: 0;
+  padding: 5px 12px 5px 12px;
+  margin-bottom: 0;
+  position: absolute;
+  bottom: 0;
+  font-weight: 300;
+  background-color: #6CD9F8;
+  border-radius: 5px 5px 0px 0px;
+  color: white;
 }
