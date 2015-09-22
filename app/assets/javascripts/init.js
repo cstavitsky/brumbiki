@@ -78,32 +78,25 @@ $(document).ready(function() {
 
     var twitterUsers = new TwitterUsersCollection();
     var twitterUsersView = new TwitterUsersView({ collection: twitterUsers });
-
-
     twitterUsers.fetch({
       reset: true
     });
   })
 
-  $("#current-target-container").on("click", ".profile-circles", function(event){
-    event.preventDefault()
-    $(".profile-circles").draggable();
+
+  $("#tertiary-container").on("mouseenter", ".profile", function(event){
+    event.preventDefault();
+    $(this).find("ul").css("display", "block")
   })
 
+  $("#tertiary-container").on("mouseleave", ".profile", function(event){
+    event.preventDefault();
+    $(this).find("ul").css("display", "none")
+  })
+
+   $("#tertiary-container").on("click", ".profile-circles", function(event){
+    event.preventDefault()
+    $(".profile").draggable();
+  })
 
 });
-
-// $(function () {
-//                 $(".profile-circles").draggable();
-//                 $(".profile-circles").droppable({
-//                         drop: function (event, ui) {
-//                                 $("#top-container").html("dropped!");
-//                         },
-//                         over: function (event, ui) {
-//                                 $("#top-container").html("moving in!");
-//                         },
-//                         out: function (event, ui) {
-//                                 $("#top-container").html("moving out!");
-//                         }
-//                 });
-//         });
