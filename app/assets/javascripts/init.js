@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
   var keywords = []
   var tweet = ""
@@ -13,12 +12,12 @@ $(document).ready(function() {
   $("form").on("submit", function(event) {
     event.preventDefault();
 
-    $("#current-container").empty();
-    $("#target-container").empty();
-    $("#primary-container").empty();
-    $("#secondary-container").empty();
-    $("#tertiary-container").empty();
-    $("#tweets-container").empty();
+    // $("#current-container").empty();
+    // $("#target-container").empty();
+    // $("#primary-container").empty();
+    // $("#secondary-container").empty();
+    // $("#tertiary-container").empty();
+    // $("#tweets-container").empty();
     $("#welcome-container").fadeOut("slow");
     $("#top-container").animate({ height: "250" }, 2500);
 

@@ -9,16 +9,16 @@ var TwitterUsersView = Backbone.View.extend({
     twitterUserView.render();
 
     var twitterUserType = twitterUser.attributes.user_type;
+    // var primaryIntro = "<div>Duke blah blah blah</div>";
 
-    if (twitterUserType === "current") {
-      $("#current-container").append(twitterUserView.el);
-    } else if (twitterUserType === "target") {
+    if (twitterUserType === "target") {
       $("#target-container").append(twitterUserView.el);
     } else if (twitterUserType === "primary") {
+      // $("#primary-container").append(primaryIntro);
       $("#primary-container").append(twitterUserView.el);
     } else if (twitterUserType === "secondary") {
       $("#secondary-container").append(twitterUserView.el);
-    } else {
+    } else if (twitterUserType === "tertiary") {
       $("#tertiary-container").append(twitterUserView.el);
     }
 
