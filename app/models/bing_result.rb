@@ -1,27 +1,21 @@
 require 'highscore'
 
 class BingResult
-  attr_reader :title, :description, :url, :keywords, :handle
+
+  attr_reader :url, :title, :description, :keywords, :handle
 
   def initialize(attributes)
+    @url = attributes[:url]
     @title = attributes[:title]
     @description = attributes[:description]
-    @url = attributes[:url]
     @handle = attributes[:handle]
   end
 
   def self.all_results(query, handle)
     BingSearch.account_key = ENV['BING_ACCOUNT_KEY']
-    results = []
-    bing_search = BingSearch.web(query)
-    10.times do |count|
-      title = bing_search[count].title
-      description = bing_search[count].description
-      url = bing_search[count].url
-      results << BingResult.new(title: title, description: description, url: url, handle: handle)
+    BingSearch.web(query).first(10).map do |search_result|
+      BingResult.new(url: search_result.url, title: search_result.title, description: search_result.description, handle: handle)
     end
-    results
   end
-
 
 end
