@@ -84,7 +84,9 @@ $(document).ready(function() {
     });
   })
 
-  $()
+  $("#tweets-container").on("fadeIn", ".keyword", "slow", function() {
+    $(this).addClass("active-keyword");
+});
 
   // $("#tertiary-container").on("mouseenter", ".twitter-user", function(event){
   //   event.preventDefault();
