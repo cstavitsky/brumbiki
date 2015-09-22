@@ -19,9 +19,9 @@ nav {
   height: 550px;
   width: 100%;
   margin-top: 100px;
-  background-image: url("http://www.psdgraphics.com/file/abstract-mosaic-background.png");
-  background-size: 100%;
-  z-index: -1;
+  /*background-image: url("http://www.psdgraphics.com/file/abstract-mosaic-background.png");*/
+  /*background-size: 100%;*/
+  /*z-index: -1;*/
 }
 
 #welcome-container {

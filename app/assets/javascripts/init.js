@@ -53,7 +53,7 @@ $(document).ready(function() {
         $(keywordButton).addClass("active-keyword");
         keywords.push(value);
       }
-    }
+    };
 
   $("#tweets-container").on("click", ".keyword", function(event){
       event.preventDefault();
@@ -79,7 +79,6 @@ $(document).ready(function() {
     var twitterUsers = new TwitterUsersCollection();
     var twitterUsersView = new TwitterUsersView({ collection: twitterUsers });
 
-
     twitterUsers.fetch({
       reset: true
     });
@@ -89,7 +88,6 @@ $(document).ready(function() {
     event.preventDefault()
     $(".profile-circles").draggable();
   })
-
 
 });
 
