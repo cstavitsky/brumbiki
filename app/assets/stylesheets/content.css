@@ -120,6 +120,22 @@
           box-sizing: border-box;
 }
 
+.active-keyword-lite {
+  height: 44px;
+  color: white;
+  padding: 0 10px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 0 12px 16px 0;
+  background-color: #f95e57;
+  border: 2px solid #f95e57;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 #search-results-container {
   float: right;
   height: 100%;

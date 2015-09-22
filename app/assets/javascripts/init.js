@@ -84,9 +84,12 @@ $(document).ready(function() {
     });
   })
 
-  $("#tweets-container").on("fadeIn", ".keyword", "slow", function() {
-    $(this).addClass("active-keyword");
-});
+  $("#tweets-container").delegate(".keyword", "mouseover", function(event) {
+    event.preventDefault();
+    $(this).toggleClass("active-keyword-lite", 300);
+  }).delegate(".keyword", "mouseout", function(){
+    $(this).toggleClass("active-keyword-lite", 300);
+  });
 
   // $("#tertiary-container").on("mouseenter", ".twitter-user", function(event){
   //   event.preventDefault();
