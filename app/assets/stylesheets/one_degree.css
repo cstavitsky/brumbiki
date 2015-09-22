@@ -32,9 +32,11 @@
   background-color: rgba(255, 255, 255, 0.75);
 }
 
-.twitter-user {
-  width: 400px;
-  margin: 0 auto;
+#drawing-annotations {
+  height: 100%;
+  weight: 300px;
+  float: left;
+  background-color: red;
 }
 
 .type-containers {
@@ -46,28 +48,33 @@
   height: 120px;
   display: flex;
   align-items: center;
+  border-bottom: 1px solid grey;
 }
 
 #primary-container {
   height: 120px;
   display: flex;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 10px;
+  border-bottom: 1px solid grey;
 }
 
 #secondary-container {
   height: 120px;
   display: flex;
   align-items: center;
+  border-bottom: 1px solid grey;
 }
 
 #tertiary-container {
   height: 120px;
   display: flex;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.5);
   border-radius: 10px;
+}
+
+.twitter-user {
+  width: 400px;
+  margin: 0 auto;
 }
 
 .profile-circles {
@@ -86,8 +93,7 @@
 }
 
 #twitter-user-name {
-  font-size: 24px;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 #twitter-user-handle {
