@@ -84,6 +84,8 @@ $(document).ready(function() {
     });
   })
 
+  $()
+
   // $("#tertiary-container").on("mouseenter", ".twitter-user", function(event){
   //   event.preventDefault();
   //   $(this).find("#twitter-user-description").css("display", "inline-block")
