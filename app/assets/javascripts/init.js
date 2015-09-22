@@ -53,7 +53,7 @@ $(document).ready(function() {
         $(keywordButton).addClass("active-keyword");
         keywords.push(value);
       }
-    }
+    };
 
   $("#tweets-container").on("click", ".keyword", function(event){
       event.preventDefault();
@@ -78,25 +78,25 @@ $(document).ready(function() {
 
     var twitterUsers = new TwitterUsersCollection();
     var twitterUsersView = new TwitterUsersView({ collection: twitterUsers });
+
     twitterUsers.fetch({
       reset: true
     });
   })
 
-
-  $("#tertiary-container").on("mouseenter", ".profile", function(event){
-    event.preventDefault();
-    $(this).find("ul").css("display", "block")
-  })
-
-  $("#tertiary-container").on("mouseleave", ".profile", function(event){
-    event.preventDefault();
-    $(this).find("ul").css("display", "none")
-  })
-
-   $("#tertiary-container").on("click", ".profile-circles", function(event){
-    event.preventDefault()
-    $(".profile").draggable();
-  })
+  // $("#tertiary-container").on("mouseenter", ".twitter-user", function(event){
+  //   event.preventDefault();
+  //   $(this).find("#twitter-user-description").css("display", "inline-block")
+  // })
+  //
+  // $("#tertiary-container").on("mouseleave", ".twitter-user", function(event){
+  //   event.preventDefault();
+  //   $(this).find("#twitter-user-description").css("display", "none")
+  // })
+  //
+  //  $("#tertiary-container").on("click", ".profile-circles", function(event){
+  //   event.preventDefault()
+  //   $(".twitter-user").draggable();
+  // })
 
 });
