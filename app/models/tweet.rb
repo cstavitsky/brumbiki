@@ -1,10 +1,10 @@
 class Tweet
+
   include Clientable
 
-  attr_reader :target_id, :target_handle, :target_name, :user_mentions, :target_profile_image_url, :target_description
+  attr_reader :target_id, :target_handle, :target_name, :target_description, :user_mentions, :target_profile_image_url
 
   def initialize(attributes)
-    # @embedded_tweet = attributes[:embedded_tweet]
     @target_id = attributes[:target_id]
     @target_handle = attributes[:handle]
     @target_name = attributes[:target_name]
@@ -31,7 +31,6 @@ class Tweet
     links = self.tweet_links(tweet)
 
     {
-      # embedded_tweet: Clientable.client.oembed("#{tweet.id}").html,
       target_id: tweet.user.id,
       target_handle: tweet.user.screen_name,
       target_name: tweet.user.name,
@@ -46,18 +45,10 @@ class Tweet
     }
   end
 
-  def self.expanded_urls(tweet)
-    tweet.urls.map { |url| url.expanded_url.to_s }
-  end
-
   def self.tweet_text(tweet)
     words = tweet.text.split(" ")
     words.delete_if { |word| word.match(/^\s*(#|$)|\b(http.*|https.*)\b/) }
     words.join(" ")
-  end
-
-  def self.profile_image_url(tweet)
-    tweet.user.profile_image_url.to_s
   end
 
   def self.tweet_links(tweet)
@@ -65,15 +56,23 @@ class Tweet
     urls.map { |url| Link.new(url) }
   end
 
+  def self.expanded_urls(tweet)
+    tweet.urls.map { |url| url.expanded_url.to_s }
+  end
+
+  def self.profile_image_url(tweet)
+    tweet.user.profile_image_url.to_s
+  end
+
   def self.text_keywords(text)
     text.keywords.rank.map { |word| word.text }
   end
 
   def self.title_keywords(links)
-    title_keywords = links.map do |link|
+    keywords = links.map do |link|
       link.title.keywords.rank.map { |word| word.text }
     end
-    title_keywords.flatten
+    keywords.flatten
   end
 
 end
