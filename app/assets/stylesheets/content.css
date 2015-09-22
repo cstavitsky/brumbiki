@@ -83,6 +83,22 @@
   background-color: #6CD9F8;
 }
 
+#keyword-container {
+  height: 35px;
+  width: 400px;
+  margin-left: 600px
+}
+
+.keyword-tracker {
+  height: 25px;
+  padding: 0 8px;
+  margin-top: 8px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background-color: red;
+}
+
 .keyword-cloud {
   margin: 25px 0 19px 0;
 }
@@ -119,6 +135,8 @@
      -moz-box-sizing: border-box;
           box-sizing: border-box;
 }
+
+
 
 #search-results-container {
   float: right;

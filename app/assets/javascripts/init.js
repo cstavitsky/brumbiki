@@ -33,8 +33,8 @@ $(document).ready(function() {
  function toggleKeyword(keywordButton) {
   if($(keywordButton).closest(".tweet")[0] != tweet[0]){
       keywords = []
-      console.log($(keywordButton))
       $(".keyword").removeClass("active-keyword")
+      $("#keyword-container").empty();
     }
   };
 
@@ -69,6 +69,41 @@ $(document).ready(function() {
       });
     };
   });
+
+  $("#tweets-container").on("click", ".keyword", function(event){
+      event.preventDefault();
+    var text = $(this).val()
+    if($(this).hasClass("active-keyword")){
+    var text = $(this).val()
+    $("#keyword-container").append("<input class='keyword-tracker' type='submit' value="+ text +">")
+    }
+    else{
+      $('.keyword-tracker').filter(function() {
+        return $(this).val() === text;
+      }).css("display", "none");
+    }
+  });
+
+  $("body").on("click", ".keyword-tracker", function(event){
+      event.preventDefault();
+      var twitterHandle = $("#search-bar").val();
+      $(this).remove();
+      var text = $(this).val()
+      $('.keyword').filter(function() {
+        return $(this).val() === text;
+      }).removeClass("active-keyword");
+      removeKeyword(this)
+      var query = keywords.join(' ')
+      var results = new SearchResultsCollection();
+      var resultsCollectionView = new SearchResultsView({ collection: results});
+      if (query.length > 0){
+      results.fetch({
+          reset: true,
+          data: $.param({ query: query, handle: twitterHandle })
+      });
+    };
+  });
+
 
   $("#one-degree-button").on("click", function(event) {
     event.preventDefault();
