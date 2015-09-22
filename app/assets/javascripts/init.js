@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
   var keywords = []
   var tweet = ""
@@ -13,7 +12,7 @@ $(document).ready(function() {
   $("form").on("submit", function(event) {
     event.preventDefault();
 
-    $("#current-container").empty();
+    $("#one-degree-drawing-container").fadeOut("slow");
     $("#target-container").empty();
     $("#primary-container").empty();
     $("#secondary-container").empty();
@@ -34,8 +33,8 @@ $(document).ready(function() {
  function toggleKeyword(keywordButton) {
   if($(keywordButton).closest(".tweet")[0] != tweet[0]){
       keywords = []
-      console.log($(keywordButton))
       $(".keyword").removeClass("active-keyword")
+      $("#keyword-container").empty();
     }
   };
 
@@ -71,9 +70,45 @@ $(document).ready(function() {
     };
   });
 
+  $("#tweets-container").on("click", ".keyword", function(event){
+      event.preventDefault();
+    var text = $(this).val()
+    if($(this).hasClass("active-keyword")){
+    var text = $(this).val()
+    $("#keyword-container").append("<input class='keyword-tracker' type='submit' value="+ text +">")
+    }
+    else{
+      $('.keyword-tracker').filter(function() {
+        return $(this).val() === text;
+      }).css("display", "none");
+    }
+  });
+
+  $("body").on("click", ".keyword-tracker", function(event){
+      event.preventDefault();
+      var twitterHandle = $("#search-bar").val();
+      $(this).remove();
+      var text = $(this).val()
+      $('.keyword').filter(function() {
+        return $(this).val() === text;
+      }).removeClass("active-keyword");
+      removeKeyword(this)
+      var query = keywords.join(' ')
+      var results = new SearchResultsCollection();
+      var resultsCollectionView = new SearchResultsView({ collection: results});
+      if (query.length > 0){
+      results.fetch({
+          reset: true,
+          data: $.param({ query: query, handle: twitterHandle })
+      });
+    };
+  });
+
+
   $("#one-degree-button").on("click", function(event) {
     event.preventDefault();
 
+    $("#one-degree-button-container").fadeOut("slow");
     $("#top-container").animate({ height: "500" }, 1000);
 
     var twitterUsers = new TwitterUsersCollection();
@@ -83,6 +118,13 @@ $(document).ready(function() {
       reset: true
     });
   })
+
+  $("#tweets-container").delegate(".keyword", "mouseover", function(event) {
+    event.preventDefault();
+    $(this).toggleClass("active-keyword-lite", 300);
+  }).delegate(".keyword", "mouseout", function(){
+    $(this).toggleClass("active-keyword-lite", 300);
+  });
 
   // $("#tertiary-container").on("mouseenter", ".twitter-user", function(event){
   //   event.preventDefault();
