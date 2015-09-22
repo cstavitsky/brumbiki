@@ -37,7 +37,7 @@ class Tweet
       target_handle: tweet.user.screen_name,
       target_name: tweet.user.name,
       target_description: tweet.user.description,
-      created_at: tweet.created_at,
+      created_at: self.format_created_at(tweet),
       user_mentions: tweet.user_mentions,
       text: text,
       target_profile_image_url: self.profile_image_url(tweet),
@@ -60,6 +60,10 @@ class Tweet
 
   def self.expanded_urls(tweet)
     tweet.urls.map { |url| url.expanded_url.to_s }
+  end
+
+  def self.format_created_at(tweet)
+    tweet.created_at.strftime("%B %-d, %Y")
   end
 
   def self.profile_image_url(tweet)

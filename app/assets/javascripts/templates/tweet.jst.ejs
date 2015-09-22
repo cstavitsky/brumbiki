@@ -11,10 +11,11 @@
       <div class="tweet-content">
         <p class="tweet-text"><%= text %></p>
         <a class="tweet-link" href="<%= links[0].url %>" class="test" target="_blank"><%= links[0].title %></a>
+        <p class="tweet-date"><%= created_at %></p>
+        <button class="reply-button">Reply</button>
       </div>
     </div>
 
-    <button class="reply-button">Reply</button>
 
     <!-- <a class="reply-button" href="https://twitter.com/share?in_reply_to=<%= tweet_id%>&url=twitter.com" onClick='showPopup(this.href);return(false);'>
       <img src="http://i.imgur.com/cDWLWZz.png">
