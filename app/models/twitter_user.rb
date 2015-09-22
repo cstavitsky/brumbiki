@@ -1,7 +1,8 @@
 class TwitterUser
+
   include Clientable
 
-  attr_reader :name, :uid
+  attr_reader :uid, :name
 
   def initialize(attributes)
     @uid = attributes[:uid]
@@ -18,28 +19,17 @@ class TwitterUser
     TwitterUser.new(uid: tweet.target_id, handle: tweet.target_handle, name: tweet.target_name, profile_image: tweet.target_profile_image_url, description: tweet.target_description, user_type: "target")
   end
 
-  def self.mention_ids(tweets)
-    tweets.map do |tweet|
-      tweet.user_mentions.map { |mention| mention.id }
-    end
-  end
+  def connections(tweets, target_twitter_user)
+    mentioned_ids = self.mentioned_ids(tweets).flatten!
+    current_user_follower_ids = Clientable.client.follower_ids(self.uid.to_i)
 
-  def self.ids_to_twitter_users(ids, user_types)
-    Clientable.client.users(ids).map.with_index do |user, index|
-      TwitterUser.new(uid: user.id, handle: user.screen_name, name: user.name, profile_image: user.profile_image_url.to_s, user_type: user_types[index], description: user.description)
-    end
-  end
-
-  def self.connections(tweets, current_twitter_user, target_twitter_user)
-    mention_ids = self.mention_ids(tweets).flatten!
-
-    primary_ids = self.primary_connections(mention_ids, current_twitter_user)
+    primary_ids = self.primary_connections(mentioned_ids, current_user_follower_ids)
     user_types = ["primary"] * primary_ids.length
 
-    secondary_ids = self.secondary_connections(current_twitter_user, target_twitter_user)
+    secondary_ids = self.secondary_connections(target_twitter_user, current_user_follower_ids)
     user_types += ["secondary"] * secondary_ids.length
 
-    tertiary_ids = self.tertiary_connections(mention_ids)
+    tertiary_ids = self.tertiary_connections(mentioned_ids)
     user_types += ["tertiary"] * tertiary_ids.length
 
     ids = primary_ids + secondary_ids + tertiary_ids
@@ -47,36 +37,42 @@ class TwitterUser
     self.ids_to_twitter_users(ids, user_types)
   end
 
-  def self.primary_connections(mention_ids, current_twitter_user)
-    follower_ids = Clientable.client.follower_ids(current_twitter_user.uid.to_i).to_h[:ids]
-    primary_connection_ids = mention_ids.select{ |mention_id| follower_ids.include?(mention_id) }
-    primary_connection_ids
+  def mentioned_ids(tweets)
+    tweets.map do |tweet|
+      tweet.user_mentions.map { |mention| mention.id }
+    end
   end
 
-  def self.secondary_connections(current_twitter_user, target_twitter_user)
-    # Find User's twitter followers
-    # Find all users the Target is followING
-    # Pull out any matches whom a) follow the User, and b) the Target follows
-    user_follower_ids = Clientable.client.follower_ids(current_twitter_user.uid.to_i)
+  def primary_connections(mentioned_ids, current_user_follower_ids)
+    mentioned_ids.select{ |mention_id| current_user_follower_ids.include?(mention_id) }
+  end
+
+  def secondary_connections(target_twitter_user, current_user_follower_ids)
     target_following_ids = Clientable.client.friend_ids(target_twitter_user.uid.to_i)
-    secondary_connection_ids = user_follower_ids.select{ |follower_id| target_following_ids.include?(follower_id) }
-    secondary_connection_ids
+    current_user_follower_ids.select{ |follower_id| target_following_ids.include?(follower_id) }
   end
 
-  def self.tertiary_connections(mention_ids)
+  def tertiary_connections(mentioned_ids)
     frequency = {}
 
-    mention_ids.each do |id|
-      frequency[id] = mention_ids.count(id) unless frequency[id]
+    mentioned_ids.each do |id|
+      frequency[id] = mentioned_ids.count(id) unless frequency[id]
     end
 
-    top_three_mentions_ids = frequency.keys
+    top_three_mentioned_ids = frequency.keys
 
     if frequency.values.length > 3
       top_three = frequency.sort_by { |id, count| count }.last(3)
-      top_three_mentions_ids = Hash[top_three].keys
+      top_three_mentioned_ids = Hash[top_three].keys
     end
 
-    top_three_mentions_ids
+    top_three_mentioned_ids
   end
+
+  def ids_to_twitter_users(ids, user_types)
+    Clientable.client.users(ids).map.with_index do |user, index|
+      TwitterUser.new(uid: user.id, handle: user.screen_name, name: user.name, profile_image: user.profile_image_url.to_s, user_type: user_types[index], description: user.description)
+    end
+  end
+
 end

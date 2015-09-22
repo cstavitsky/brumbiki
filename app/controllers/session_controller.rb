@@ -1,8 +1,8 @@
 class SessionController < ApplicationController
+  
   def create
-    @user = User.find_or_create_from_auth_hash(auth_hash)
-    # raise :test
-    session[:user_id] = @user.id
+    user = User.find_or_create_from_auth_hash(auth_hash)
+    session[:user_id] = user.id
     redirect_to root_path
   end
 
@@ -16,4 +16,5 @@ class SessionController < ApplicationController
   def auth_hash
     request.env['omniauth.auth']
   end
+
 end

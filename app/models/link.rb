@@ -1,6 +1,5 @@
 require 'open-uri'
 require 'open_uri_redirections'
-# require 'net/http'
 
 class Link
 
@@ -8,9 +7,7 @@ class Link
 
   def initialize(url)
     @url = url
-    # @page = MetaInspector.new(url)
-    @title = grab_title
-    # @title = @page.title
+    @title = self.grab_title
   end
 
   def grab_title
