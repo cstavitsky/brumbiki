@@ -84,24 +84,19 @@ $(document).ready(function() {
     });
   })
 
-  $("#current-target-container").on("click", ".profile-circles", function(event){
-    event.preventDefault()
-    $(".profile-circles").draggable();
-  })
+  // $("#tertiary-container").on("mouseenter", ".twitter-user", function(event){
+  //   event.preventDefault();
+  //   $(this).find("#twitter-user-description").css("display", "inline-block")
+  // })
+  //
+  // $("#tertiary-container").on("mouseleave", ".twitter-user", function(event){
+  //   event.preventDefault();
+  //   $(this).find("#twitter-user-description").css("display", "none")
+  // })
+  //
+  //  $("#tertiary-container").on("click", ".profile-circles", function(event){
+  //   event.preventDefault()
+  //   $(".twitter-user").draggable();
+  // })
 
 });
-
-// $(function () {
-//                 $(".profile-circles").draggable();
-//                 $(".profile-circles").droppable({
-//                         drop: function (event, ui) {
-//                                 $("#top-container").html("dropped!");
-//                         },
-//                         over: function (event, ui) {
-//                                 $("#top-container").html("moving in!");
-//                         },
-//                         out: function (event, ui) {
-//                                 $("#top-container").html("moving out!");
-//                         }
-//                 });
-//         });

@@ -1,4 +1,5 @@
 var TwitterUserView = Backbone.View.extend({
+  className: "twitter-user",
   template: JST["templates/twitter_user"],
 
   render: function() {
