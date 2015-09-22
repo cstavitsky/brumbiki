@@ -28,42 +28,53 @@
   margin: auto;
 }
 
+/*#one-degree-table {
+  width: 100%;
+}*/
+
+/*.degree-rows {
+  height: 25%;
+  width: 100%;
+  border: 1px solid red;
+}*/
+
+/*.test {
+  display: flex;
+  align-items: center;
+}*/
+
+.twitter-user {
+  width: 400px;
+}
+
 #current-container {
-  width: 300px;
   display: inline-block;
-  margin-right: 15px;
+  height: 25%;
+  margin-top: 20px;
 }
 
 #target-container {
-  width: 300px;
   display: inline-block;
-  margin-right: 15px;
+  height: 25%;
+  margin-top: 20px;
 }
 
 #primary-container {
-  width: 300px;
-  display: inline-block;
-  margin-right: 15px;
+  height: 25%;
+  display: flex;
+  align-items: center;
 }
 
 #secondary-container {
-  width: 300px;
-  display: inline-block;
-  margin-right: 15px;
+  height: 25%;
+  display: flex;
+  align-items: center;
 }
 
 #tertiary-container {
-  height: 100%;
-  width: 300px;
-  display: inline-block;
-  margin-right: 15px;
-}
-
-.twitter-user {
-  height: 65px;
-  width: 100%;
-  border: 1px solid black;
-  margin-bottom: 30px;
+  height: 25%;
+  display: flex;
+  align-items: center;
 }
 
 .profile-circles {
