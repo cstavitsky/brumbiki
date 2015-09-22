@@ -119,6 +119,13 @@ $(document).ready(function() {
     });
   })
 
+  $("#tweets-container").delegate(".keyword", "mouseover", function(event) {
+    event.preventDefault();
+    $(this).toggleClass("active-keyword-lite", 300);
+  }).delegate(".keyword", "mouseout", function(){
+    $(this).toggleClass("active-keyword-lite", 300);
+  });
+
   // $("#tertiary-container").on("mouseenter", ".twitter-user", function(event){
   //   event.preventDefault();
   //   $(this).find("#twitter-user-description").css("display", "inline-block")
