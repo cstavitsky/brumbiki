@@ -13,7 +13,6 @@
 
 .tweet-container {
   padding: 15px;
-  text-align: right;
   border-radius: 10px;
   background-color: white;
   -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25);
@@ -36,8 +35,7 @@
   width: 475px;
   text-align: left;
   padding-left: 8px;
-  margin: 0 0 15px 45px;
-  display: inline-block;
+  margin: 0 0 0 45px;
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
@@ -60,6 +58,7 @@
 
 .tweet-content {
   font-size: 20px;
+  position: relative;
 }
 
 .tweet-text {
@@ -67,18 +66,28 @@
   font-weight: 400;
 }
 
+.tweet-date {
+  color: #9B9B9B;
+  font-size: 16px;
+  margin: 35px 0 0 0;
+}
+
 .tweet-link {
   color: #6CD9F8;
-  font-weight: 600;
+  font-weight: 400;
   text-decoration: none;
 }
 
 .reply-button {
+  right: 0;
+  bottom: 0;
   width: 80px;
   height: 30px;
   border: none;
   color: white;
   outline: none;
+  font-size: 16px;
+  position: absolute;
   border-radius: 5px;
   background-color: #6CD9F8;
 }
@@ -136,7 +145,22 @@
           box-sizing: border-box;
 }
 
-
+.active-keyword-lite {
+  opacity: 0.9;
+  height: 44px;
+  color: white;
+  padding: 0 10px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 0 12px 16px 0;
+  background-color: #F8463E;
+  border: 2px solid #F8463E;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
 
 #search-results-container {
   float: right;
