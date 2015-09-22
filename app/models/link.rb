@@ -25,12 +25,9 @@ class Link
     end
 
     doc = Oga.parse_html(body)
+    title = doc.at_css('title')
 
-    if doc.at_css('title') != nil
-      return doc.at_css('title').text
-    else
-      return @url
-    end
+    title ? title.text : @url
   end
 
 end
