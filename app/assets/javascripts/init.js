@@ -13,10 +13,12 @@ $(document).ready(function() {
     event.preventDefault();
 
     $("#one-degree-drawing-container").fadeOut("slow");
-    $("#target-container").remove("#target-container *:not(.type-text-left)");
-    $("#target-container").remove("#primary-container *:not(.type-text-right)");
-    $("#target-container").remove("#secondary-container *:not(.type-text-left)");
-    $("#target-container").remove("#tertiary-container *:not(.type-text-right)");
+
+    $('#target-container').find('*').not('.type-text-left').remove();
+    $('#primary-container').find('*').not('.type-text-right').remove();
+    $('#secondary-container').find('*').not('.type-text-left').remove();
+    $('#tertiary-container').find('*').not('.type-text-right').remove();
+
     $("#tweets-container").empty();
     $("#welcome-container").fadeOut("slow");
     $("#top-container").animate({ height: "250" }, 2500);
