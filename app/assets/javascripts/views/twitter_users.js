@@ -10,24 +10,20 @@ var TwitterUsersView = Backbone.View.extend({
 
     var twitterUserType = twitterUser.attributes.user_type;
 
-    if (twitterUserType === "current") {
-      $("#current-container").append(twitterUserView.el);
-    } else if (twitterUserType === "target") {
+    if (twitterUserType === "target") {
       $("#target-container").append(twitterUserView.el);
     } else if (twitterUserType === "primary") {
       $("#primary-container").append(twitterUserView.el);
     } else if (twitterUserType === "secondary") {
       $("#secondary-container").append(twitterUserView.el);
-    } else {
+    } else if (twitterUserType === "tertiary") {
       $("#tertiary-container").append(twitterUserView.el);
     }
 
-    $("#one-degree-drawing-container").css("display", "block");
+    $("#one-degree-drawing-container").fadeIn("slow");
   },
 
   addAll: function() {
-    $("#one-degree-button-container").css("display", "none");
-
     return this.collection.each(function(twitterUser) {
       return this.addOne(twitterUser);
     }, this);

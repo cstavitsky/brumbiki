@@ -2,24 +2,31 @@
   <div class="tweet-container">
 
     <img class="profile-pic" src="<%= target_profile_image_url %>" alt="">
-    <h3 class="target-name"><%= target_name %></h3>
 
-    <div class="tweet-content">
+    <div class="tweet-content-container">
 
-      <a href="<%= links[0].url %>" class="test" target="_blank"><%= links[0].title %></a>
-      <h4><%= text %></h4>
-      <p>tweeted on <%= created_at %></p>
+      <h4 class="target-name"><%= target_name %></h4>
+      <h4 class="target-handle">@<%= target_handle %></h4>
 
-      <div class="keyword-cloud">
-        <% for (var i=0; i< text_keywords.length; i++) { %>
-          <input class="keyword" type="submit" value="<%=text_keywords[i]%>">
-        <% } %>
-
-        <% for (var i=0; i< title_keywords.length; i++) { %>
-          <input class="keyword" type="submit" value="<%=title_keywords[i]%>">
-        <% } %>
+      <div class="tweet-content">
+        <p class="tweet-text"><%= text %></p>
+        <a class="tweet-link" href="<%= links[0].url %>" class="test" target="_blank"><%= links[0].title %></a>
       </div>
-      <p><a id="search-result-tweet-to" href="https://twitter.com/share?in_reply_to=<%= tweet_id%>&url=twitter.com" class="twitter-share-button" onClick='showPopup(this.href);return(false);'><img src="http://i.imgur.com/cDWLWZz.png" height="25px"></a></p>
     </div>
+
+    <button class="reply-button">Reply</button>
+
+    <!-- <a class="reply-button" href="https://twitter.com/share?in_reply_to=<%= tweet_id%>&url=twitter.com" onClick='showPopup(this.href);return(false);'>
+      <img src="http://i.imgur.com/cDWLWZz.png">
+    </a> -->
+  </div>
+  <div class="keyword-cloud">
+    <% for (var i=0; i< text_keywords.length; i++) { %>
+      <input class="keyword" type="submit" value="<%=text_keywords[i]%>">
+    <% } %>
+
+    <% for (var i=0; i< title_keywords.length; i++) { %>
+      <input class="keyword" type="submit" value="<%=title_keywords[i]%>">
+    <% } %>
   </div>
 <% } %>

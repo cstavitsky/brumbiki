@@ -22,53 +22,50 @@
 
 #one-degree-drawing-container {
   height: 500px;
-  width: 80%;
+  /*width: 80%;*/
   display: none;
   position: relative;
   margin: auto;
   text-align: center;
+  background-color: rgba(255, 255, 255, 0.75);
 }
 
 .twitter-user {
   width: 400px;
   margin: 0 auto;
-  /*border: 1px solid black;*/
 }
 
-#top-row-container {
-  width: 1000px;
-  text-align: center;
+.type-containers {
+  width: 80%;
   margin: auto;
 }
 
-#current-container {
-  display: inline-block;
-  height: 25%;
-  margin-top: 20px;
-}
-
 #target-container {
-  display: inline-block;
-  height: 25%;
-  margin-top: 20px;
-}
-
-#primary-container {
-  height: 25%;
+  height: 120px;
   display: flex;
   align-items: center;
 }
 
+#primary-container {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
 #secondary-container {
-  height: 25%;
+  height: 120px;
   display: flex;
   align-items: center;
 }
 
 #tertiary-container {
-  height: 25%;
+  height: 120px;
   display: flex;
   align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
 }
 
 .profile-circles {
