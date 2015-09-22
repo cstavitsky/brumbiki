@@ -26,44 +26,49 @@
   display: none;
   position: relative;
   margin: auto;
-}
-
-#current-container {
-  width: 300px;
-  display: inline-block;
-  margin-right: 15px;
-}
-
-#target-container {
-  width: 300px;
-  display: inline-block;
-  margin-right: 15px;
-}
-
-#primary-container {
-  width: 300px;
-  display: inline-block;
-  margin-right: 15px;
-}
-
-#secondary-container {
-  width: 300px;
-  display: inline-block;
-  margin-right: 15px;
-}
-
-#tertiary-container {
-  height: 100%;
-  width: 300px;
-  display: inline-block;
-  margin-right: 15px;
+  text-align: center;
 }
 
 .twitter-user {
-  height: 65px;
-  width: 100%;
-  border: 1px solid black;
-  margin-bottom: 30px;
+  width: 400px;
+  margin: 0 auto;
+  /*border: 1px solid black;*/
+}
+
+#top-row-container {
+  width: 1000px;
+  text-align: center;
+  margin: auto;
+}
+
+#current-container {
+  display: inline-block;
+  height: 25%;
+  margin-top: 20px;
+}
+
+#target-container {
+  display: inline-block;
+  height: 25%;
+  margin-top: 20px;
+}
+
+#primary-container {
+  height: 25%;
+  display: flex;
+  align-items: center;
+}
+
+#secondary-container {
+  height: 25%;
+  display: flex;
+  align-items: center;
+}
+
+#tertiary-container {
+  height: 25%;
+  display: flex;
+  align-items: center;
 }
 
 .profile-circles {
