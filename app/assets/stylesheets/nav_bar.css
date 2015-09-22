@@ -1,3 +1,13 @@
+nav {
+  position: fixed;
+  height: 100px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: white;
+  z-index: 1;
+}
+
 #search-container {
   position: relative;
   top: 50%;
