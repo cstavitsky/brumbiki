@@ -10,14 +10,16 @@
   text-decoration: none;
   border-radius: 5px;
   border: 0;
-  height: 30px;
-  width: 200px;
+  height: 60px;
+  width: 300px;
   padding: 8px 16px;
   position: relative;
   top: calc(50% + 15px);
-  left: calc(50% - 100px);
+  left: calc(50% - 150px);
   transform: translateY(-50%);
   text-align: center;
+  background-color: #6CD9F8;
+  color: white;
 }
 
 #one-degree-drawing-container {
