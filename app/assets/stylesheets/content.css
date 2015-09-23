@@ -131,7 +131,7 @@
           box-sizing: border-box;
 }
 
-/*.active-keyword-lite {
+.active-keyword-lite {
   opacity: 0.9;
   height: 40px;
   color: white;
@@ -146,7 +146,12 @@
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
-}*/
+}
+
+.search-result-url {
+  font-size: 0.85em;
+  font-style: italic;
+}
 
 .keyword-tracker {
   color: white;

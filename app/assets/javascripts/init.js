@@ -1,7 +1,7 @@
 $(document).ready(function() {
-
-  var keywords = [];
-  var tweet = "";
+  var keywords = []
+  var tweet = ""
+  var first_visit = true
 
   var tweets = new TweetsCollection();
   var tweetsView = new TweetsView({ collection: tweets });
@@ -31,6 +31,14 @@ $(document).ready(function() {
       reset: true,
       data: $.param({ handle: twitterHandle })
     });
+    $("#search-results-container").empty();
+    if (first_visit === true) {
+      var searchExplanation = "<h1>what does brumbiki do for me?</h1><h3>1. it helps you become a connector</h3><p>Go ahead and click the centered button above to view some important connections with your contact. You'll find new people, plus maybe some you already know, to follow or include in a conversation with your contact!</p><h3>2. it finds new content to send your contact</h3><p>On the left is a list of recent links your contact has posted on Twitter. Links are a great way to tell what s/he cares about.</p><p>Click on a few  <input class='keyword' type='button' value='red keywords'> and relevant search results will appear for a given tweet. You can tweet these links straight to your contact or reply to their original tweet. Try stacking keywords to perform a targeted search and you'll get the most from this!</p>"
+      $("#search-results-container").append(searchExplanation)
+    } else {
+      // do nothing
+    }
+    first_visit = false;
   });
 
   function tweetFor(keywordButton) {
