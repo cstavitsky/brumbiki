@@ -1,12 +1,20 @@
 <div id="top-container">
   <div id="welcome-container">
+    <h3>Welcome to</h3>
     <h1>brumbiki</h1>
-    <h3>WELCOME</h3>
-    <h5>This application will help you set the table for thoughtful conversation with people you hope to interact with.</h5>
+    <h4>Enter a Twitter handle to begin expanding your network and exploring what's meaningful to you</h4>
   </div>
 
   <div id="one-degree-button-container">
-    <button id="one-degree-button">Brumbiki found others to include in the conversation!</button>
+
+    <% if current_user %>
+      <div id="one-degree-button">
+        <button id="one-degree-button">Brumbiki found others to include in the conversation!</button>
+      </div>
+    <% else %>
+      <button id="login">Please login to see your Brumbiki!</button>
+    <% end %>
+
   </div>
 
   <div id="one-degree-drawing-container">
@@ -27,12 +35,12 @@
   </div>
 </div>
 
-<div id="divider"></div>
-<div id="keyword-container">
-  <h4 id="search-words">Your Search Words</h4>
-</div>
-<div id="content-container">
-  <div id="tweets-container"></div>
-  <div id="search-results-container">
+<div id="bottom-container">
+  <div id="keyword-container">
+    <h4 id="search-words">Your Search Words</h4>
+  </div>
+  <div id="content-container">
+    <div id="tweets-container"></div>
+    <div id="search-results-container"></div>
   </div>
 </div>
