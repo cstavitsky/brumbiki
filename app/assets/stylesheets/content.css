@@ -102,28 +102,12 @@
   background-color: #0071A8
 }
 
-#keyword-container {
-  height: 35px;
-  width: 400px;
-  margin-left: 600px
-}
-
-.keyword-tracker {
-  height: 25px;
-  padding: 0 8px;
-  margin-top: 8px;
-  border: none;
-  border-radius: 5px;
-  color: white;
-  background-color: red;
-}
-
 .keyword-cloud {
   margin: 25px 0 19px 0;
 }
 
 .keyword {
-  height: 44px;
+  height: 40px;
   outline: none;
   color: #A32200;
   padding: 0 10px;
@@ -140,7 +124,7 @@
 }
 
 .active-keyword {
-  height: 44px;
+  height: 40px;
   color: white;
   padding: 0 10px;
   font-size: 15px;
@@ -155,9 +139,9 @@
           box-sizing: border-box;
 }
 
-/*.active-keyword-lite {
+.active-keyword-lite {
   opacity: 0.9;
-  height: 44px;
+  height: 40px;
   color: white;
   padding: 0 10px;
   font-size: 15px;
@@ -170,7 +154,29 @@
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
-}*/
+}
+
+.search-result-url {
+  font-size: 0.85em;
+  font-style: italic;
+}
+
+.keyword-tracker {
+  color: white;
+  height: 40px;
+  outline: none;
+  padding: 0 10px;
+  font-size: 15px;
+  font-weight: 400;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 0 12px 16px 0;
+  background-color: #F8463E;
+  border: 1px solid #F8463E;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
 
 #search-results-container {
   float: right;
@@ -178,14 +184,7 @@
 }
 
 .search-result-container {
-  padding: 12px;
-  border-radius: 10px;
   margin-bottom: 30px;
-  background-color: white;
-}
-
-#search-result-tweet-to {
-  font-style: italic;
 }
 
 #search-result-link {
