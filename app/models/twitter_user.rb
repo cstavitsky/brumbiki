@@ -23,13 +23,13 @@ class TwitterUser
     mentioned_ids = self.mentioned_ids(tweets).flatten!
     current_user_follower_ids = Clientable.client.follower_ids(self.uid.to_i)
 
-    primary_ids = self.primary_connections(mentioned_ids, current_user_follower_ids)
+    primary_ids = self.primary_connections(mentioned_ids, current_user_follower_ids) - [target_twitter_user.uid]
     user_types = ["primary"] * primary_ids.length
 
-    secondary_ids = self.secondary_connections(target_twitter_user, current_user_follower_ids) - primary_ids
+    secondary_ids = self.secondary_connections(target_twitter_user, current_user_follower_ids) - primary_ids - [target_twitter_user.uid]
     user_types += ["secondary"] * secondary_ids.length
 
-    tertiary_ids = self.tertiary_connections(mentioned_ids - primary_ids - secondary_ids)
+    tertiary_ids = self.tertiary_connections(mentioned_ids - primary_ids - secondary_ids  - [target_twitter_user.uid])
     user_types += ["tertiary"] * tertiary_ids.length
 
     ids = primary_ids + secondary_ids + tertiary_ids
@@ -46,12 +46,16 @@ class TwitterUser
   end
 
   def primary_connections(mentioned_ids, current_user_follower_ids)
-    mentioned_ids.select{ |mention_id| current_user_follower_ids.include?(mention_id) }
+    primary = mentioned_ids.select{ |mention_id| current_user_follower_ids.include?(mention_id) }
+
+    primary.count > 3 ? primary[0..4] : primary
   end
 
   def secondary_connections(target_twitter_user, current_user_follower_ids)
     target_following_ids = Clientable.client.friend_ids(target_twitter_user.uid.to_i)
-    current_user_follower_ids.select{ |follower_id| target_following_ids.include?(follower_id) }
+    secondary = current_user_follower_ids.select{ |follower_id| target_following_ids.include?(follower_id) }
+
+    secondary.count > 3 ? secondary[0..4] : secondary
   end
 
   def tertiary_connections(mentioned_ids)
