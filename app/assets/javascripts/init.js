@@ -29,11 +29,12 @@ $(document).ready(function() {
     $("#pointer-arrow").fadeOut("slow");
     $("#one-degree-drawing-container").fadeOut("slow");
     emptyContainers();
-
+    $("#search-results-container").find("*").not("#keyword-container, .keyword-tracker").remove();
+    $("#keyword-container").empty();
     $("#tweets-container").empty();
+
     $("#welcome-container").fadeOut("slow");
     $("#top-container").animate({ height: "250" }, 2500);
-    $("#search-words").hide();
 
     var twitterHandle = $("#search-bar").val();
 
