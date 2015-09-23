@@ -5,6 +5,17 @@
   z-index: -1;
 }
 
+#pointer-arrow {
+  margin: 0 auto;
+  font-size: 10em;
+  color: white;
+  top: 15%;
+  left: 46%;
+  position: absolute;
+  text-align: center;
+
+}
+
 #welcome-container {
   margin: 0 auto;
   width: 1000px;

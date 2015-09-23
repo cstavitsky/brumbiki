@@ -16,6 +16,7 @@ $(document).ready(function() {
   $("form").on("submit", function(event) {
     event.preventDefault();
 
+    $("#pointer-arrow").fadeOut("slow");
     $("#one-degree-drawing-container").fadeOut("slow");
     emptyContainers();
 
