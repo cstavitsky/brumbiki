@@ -7,17 +7,20 @@ $(document).ready(function() {
   var tweets = new TweetsCollection();
   var tweetsView = new TweetsView({ collection: tweets });
 
+  var emptyContainers = function() {
+    $('#target-container').find('*').not('.type-text-left').remove();
+    $('#primary-container').find('*').not('.type-text-right').remove();
+    $('#secondary-container').find('*').not('.type-text-left').remove();
+    $('#tertiary-container').find('*').not('.type-text-right').remove();
+  };
+
   $("#keyword-search-container").hide();
 
   $("form").on("submit", function(event) {
     event.preventDefault();
 
     $("#one-degree-drawing-container").fadeOut("slow");
-
-    $('#target-container').find('*').not('.type-text-left').remove();
-    $('#primary-container').find('*').not('.type-text-right').remove();
-    $('#secondary-container').find('*').not('.type-text-left').remove();
-    $('#tertiary-container').find('*').not('.type-text-right').remove();
+    emptyContainers;
 
     $("#tweets-container").empty();
     $("#welcome-container").fadeOut("slow");
@@ -73,7 +76,8 @@ $(document).ready(function() {
   });
 
   $("#tweets-container").on("click", ".keyword", function(event){
-      event.preventDefault();
+    event.preventDefault();
+
     var text = $(this).val()
     if($(this).hasClass("active-keyword")){
     var text = $(this).val()
@@ -106,7 +110,6 @@ $(document).ready(function() {
     };
   });
 
-
   $("#one-degree-button").on("click", function(event) {
     event.preventDefault();
 
@@ -127,6 +130,16 @@ $(document).ready(function() {
   }).delegate(".keyword", "mouseout", function(){
     $(this).toggleClass("active-keyword-lite", 300);
   });
+
+  // $("#minimize-button").on("click", function(event) {
+  //   event.preventDefault();
+  //
+  //   $("#one-degree-drawing-container").hide();
+  //   emptyContainers;
+  //
+  //   $("#top-container").animate({ height: "250" }, 2500).delay(5000);
+  //   $("#one-degree-button-container").fadeIn("slow")
+  // });
 
   // $("#tertiary-container").on("mouseenter", ".twitter-user", function(event){
   //   event.preventDefault();
