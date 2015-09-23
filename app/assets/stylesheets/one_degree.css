@@ -101,6 +101,7 @@
   display: inline-block;
   list-style-type: none;
   vertical-align: top;
+  text-align: left;
 }
 
 #twitter-user-name {
