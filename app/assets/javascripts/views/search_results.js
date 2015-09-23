@@ -12,7 +12,7 @@ var SearchResultsView = Backbone.View.extend({
   },
 
   addAll: function(){
-    $("#search-results-container").empty();
+    $("#search-results-container").find("*").not("#keyword-container, .keyword-tracker").remove();
     return this.collection.each(function(result) {
       return this.addOne(result);
     }, this);
