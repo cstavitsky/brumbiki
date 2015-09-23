@@ -6,21 +6,30 @@
   </div>
 
   <div id="one-degree-button-container">
+
     <% if current_user %>
       <div id="one-degree-button">
-        <img id="one-degree-profile-image" src="<%= current_user.profile_image %>"><br>
-        <span>See Your Web of Influence</span>
+        <button id="one-degree-button">Brumbiki found others to include in the conversation!</button>
       </div>
     <% else %>
       <button id="login">Please login to see your Brumbiki!</button>
     <% end %>
+
   </div>
 
   <div id="one-degree-drawing-container">
-    <div class="type-containers" id="target-container"></div>
-    <div class="type-containers" id="primary-container"></div>
-    <div class="type-containers" id="secondary-container"></div>
-    <div class="type-containers" id="tertiary-container"></div>
+    <div class="type-containers" id="target-container">
+      <h4 class="type-text-left">This is your target user. BANG BANG!</h4>
+    </div>
+    <div class="type-containers" id="primary-container">
+      <h4 class="type-text-right">Your target has mentioned someone in a tweet that currently follows you!</h4>
+    </div>
+    <div class="type-containers" id="secondary-container">
+      <h4 class="type-text-left">Your target is following someone that is currently following you!</h4>
+    </div>
+    <div class="type-containers" id="tertiary-container">
+      <h4 class="type-text-right">These are the top 3 most mentioned users by your target.</h4>
+    </div>
   </div>
 </div>
 
