@@ -1,6 +1,8 @@
 #content-container {
-  width: 100%;
-  padding: 60px 200px;
+  width: 1300px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 50px 5px;
   background-color: white;
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
@@ -8,8 +10,8 @@
 }
 
 #tweets-container {
+  float: left;
   width: 550px;
-  display: inline-block;
 }
 
 .tweet-container {
@@ -145,7 +147,7 @@
           box-sizing: border-box;
 }
 
-.active-keyword-lite {
+/*.active-keyword-lite {
   opacity: 0.9;
   height: 44px;
   color: white;
@@ -160,21 +162,18 @@
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
-}
+}*/
 
 #search-results-container {
-  height: 100%;
-  width: 550px;
+  float: right;
+  width: 650px;
 }
 
 .search-result-container {
-  height: 100%;
-  width: 90%;
   padding: 12px;
-  margin: auto;
+  border-radius: 10px;
   margin-bottom: 30px;
   background-color: white;
-  border-radius: 5px;
 }
 
 #search-result-tweet-to {
