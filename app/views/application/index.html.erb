@@ -6,7 +6,15 @@
   </div>
 
   <div id="one-degree-button-container">
-    <button id="one-degree-button">Brumbiki found others to include in the conversation!</button>
+
+    <% if current_user %>
+      <div id="one-degree-button">
+        <button id="one-degree-button">Brumbiki found others to include in the conversation!</button>
+      </div>
+    <% else %>
+      <button id="login">Please login to see your Brumbiki!</button>
+    <% end %>
+
   </div>
 
   <div id="one-degree-drawing-container">
