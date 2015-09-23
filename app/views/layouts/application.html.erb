@@ -18,17 +18,19 @@ if (window.focus) {newwindow.focus()}
   <body>
 
     <nav>
-      <% if current_user %>
-        <a href="/logout">Logout</a>
-      <% else %>
-        <a href="/auth/twitter">Login with Twitter</a>
-      <% end %>
-
       <div id="search-container">
         <%= form_tag do %>
           <input id="search-bar" name="search-bar" type="text" placeholder="@username">
         <% end %>
       </div>
+
+      <h2 id="nav-brumbiki">brumbiki</h2>
+
+      <% if current_user %>
+        <a href="/logout">Logout</a>
+      <% else %>
+        <a href="/auth/twitter">Login With Twitter</a>
+      <% end %>
     </nav>
 
     <%= yield %>

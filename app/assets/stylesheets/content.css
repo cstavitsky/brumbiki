@@ -1,8 +1,10 @@
 #content-container {
   width: 100%;
-  padding-top: 60px;
-  padding-left: 200px;
+  padding: 60px 200px;
   background-color: white;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 #tweets-container {
