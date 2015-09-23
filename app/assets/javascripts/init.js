@@ -1,8 +1,7 @@
 $(document).ready(function() {
-  var keywords = []
-  var tweet = ""
 
-  $("#keyword-search-container").hide();
+  var keywords = [];
+  var tweet = "";
 
   var tweets = new TweetsCollection();
   var tweetsView = new TweetsView({ collection: tweets });
@@ -14,8 +13,6 @@ $(document).ready(function() {
     $('#tertiary-container').find('*').not('.type-text-right').remove();
   };
 
-  $("#keyword-search-container").hide();
-
   $("form").on("submit", function(event) {
     event.preventDefault();
 
@@ -25,6 +22,7 @@ $(document).ready(function() {
     $("#tweets-container").empty();
     $("#welcome-container").fadeOut("slow");
     $("#top-container").animate({ height: "250" }, 2500);
+    $("#search-words").hide();
 
     var twitterHandle = $("#search-bar").val();
 
@@ -32,11 +30,14 @@ $(document).ready(function() {
       reset: true,
       data: $.param({ handle: twitterHandle })
     });
-    $("#search-results-container").empty();
   });
 
- function toggleKeyword(keywordButton) {
-  if($(keywordButton).closest(".tweet")[0] != tweet[0]){
+  function tweetFor(keywordButton) {
+    return $(keywordButton).parent().parent().find(".tweet-container")
+  }
+
+  function toggleKeyword(keywordButton) {
+    if(tweetFor(keywordButton)[0] != tweet[0]){
       keywords = []
       $(".keyword").removeClass("active-keyword")
       $("#keyword-container").empty();
@@ -44,23 +45,24 @@ $(document).ready(function() {
   };
 
   function removeKeyword(keywordButton) {
-    tweet = $(keywordButton).closest(".tweet")
-      var value = $(keywordButton).val();
-      if(keywords.indexOf(value) > -1){
-        var index = keywords.indexOf(value);
-        keywords.splice(index, 1)
-        $(keywordButton).removeClass("active-keyword")
-        if(keywords.length === 0 || keywords.first === ""){
-        $("#search-results-container").empty();
+    tweet = tweetFor(keywordButton);
+    var value = $(keywordButton).val();
+    var index = keywords.indexOf(value);
+    if (index > -1) {
+      keywords.splice(index, 1)
+      $(keywordButton).removeClass("active-keyword")
+      if(keywords.length === 0 || keywords.first === "") {
+        $("#search-results-container").find("*").not("#keyword-container, .keyword-tracker").remove();
       }
-      } else {
-        $(keywordButton).addClass("active-keyword");
-        keywords.push(value);
-      }
-    };
+    }
+    else {
+      $(keywordButton).addClass("active-keyword");
+      keywords.push(value);
+    }
+  }
 
-  $("#tweets-container").on("click", ".keyword", function(event){
-      event.preventDefault();
+  $("#tweets-container").on("click", ".keyword", function(event) {
+    event.preventDefault();
     var twitterHandle = $("#search-bar").val();
     toggleKeyword(this)
     removeKeyword(this)
@@ -69,45 +71,44 @@ $(document).ready(function() {
     var resultsCollectionView = new SearchResultsView({ collection: results});
     if (query.length > 0){
       results.fetch({
-          reset: true,
-          data: $.param({ query: query, handle: twitterHandle })
+        reset: true,
+        data: $.param({ query: query, handle: twitterHandle })
       });
-    };
+    }
   });
 
-  $("#tweets-container").on("click", ".keyword", function(event){
+  $("#tweets-container").on("click", ".keyword", function(event) {
     event.preventDefault();
 
     var text = $(this).val()
-    if($(this).hasClass("active-keyword")){
-    var text = $(this).val()
-    $("#keyword-container").append("<input class='keyword-tracker' type='submit' value="+ text +">")
+    if($(this).hasClass("active-keyword")) {
+      var text = $(this).val()
+      $("#keyword-container").append("<input class='keyword-tracker' type='submit' value=" + text + ">")
     }
-    else{
+    else {
       $('.keyword-tracker').filter(function() {
         return $(this).val() === text;
       }).css("display", "none");
     }
   });
 
-  $("body").on("click", ".keyword-tracker", function(event){
-      event.preventDefault();
-      var twitterHandle = $("#search-bar").val();
-      $(this).remove();
-      var text = $(this).val()
-      $('.keyword').filter(function() {
-        return $(this).val() === text;
-      }).removeClass("active-keyword");
-      removeKeyword(this)
-      var query = keywords.join(' ')
-      var results = new SearchResultsCollection();
-      var resultsCollectionView = new SearchResultsView({ collection: results});
-      if (query.length > 0){
+  $("body").on("click", ".keyword-tracker", function(event) {
+    event.preventDefault();
+    var twitterHandle = $("#search-bar").val();
+    $(this).remove();
+    var text = $(this).val()
+    removeKeyword($('.keyword').filter(function() {
+      return $(this).val() === text
+    }));
+    var query = keywords.join(' ')
+    var results = new SearchResultsCollection();
+    var resultsCollectionView = new SearchResultsView({ collection: results});
+    if (query.length > 0) {
       results.fetch({
-          reset: true,
-          data: $.param({ query: query, handle: twitterHandle })
+        reset: true,
+        data: $.param({ query: query, handle: twitterHandle })
       });
-    };
+    }
   });
 
   $("#one-degree-button").on("click", function(event) {
