@@ -18,7 +18,7 @@
   left: calc(50% - 150px);
   transform: translateY(-50%);
   text-align: center;
-  background-color: #6CD9F8;
+  background-color: #A32200;
   color: white;
 }
 
@@ -39,7 +39,7 @@
 #minimize-button {
   height: 20px;
   width: 20px;
-  background-color: #6CD9F8;
+  background-color: #204466;
   border-radius: 5px 5px 0px 0px;
   position: absolute;
   bottom: 0;
@@ -59,22 +59,24 @@
   height: 25%;
   display: flex;
   align-items: center;
-  border-bottom: 2px solid grey;
+  border-bottom: 2px solid #004567;
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
 }
 
+.type-containers:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-bottom: 2px solid #A32200;
+}
+
 #target-container {
-  border-bottom: 2px solid #6CD9F8;
 }
 
 #primary-container {
-  border-bottom: 2px solid #6CD9F8;
 }
 
 #secondary-container {
-  border-bottom: 2px solid #6CD9F8;
 }
 
 #tertiary-container {
@@ -117,7 +119,7 @@
   position: absolute;
   bottom: 0;
   font-weight: 300;
-  background-color: #6CD9F8;
+  background-color: #004567;
   border-radius: 5px 5px 0px 0px;
   color: white;
 }
@@ -129,7 +131,7 @@
   position: absolute;
   bottom: 0;
   font-weight: 300;
-  background-color: #6CD9F8;
+  background-color: #004567;
   border-radius: 5px 5px 0px 0px;
   color: white;
 }
