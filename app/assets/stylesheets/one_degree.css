@@ -16,7 +16,7 @@
   position: relative;
   top: calc(50% + 15px);
   left: calc(50% - 150px);
-  /*transform: translateY(-50%);*/
+  transform: translateY(-50%);
   text-align: center;
   background-color: #6CD9F8;
   color: white;
