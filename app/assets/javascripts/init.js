@@ -13,11 +13,13 @@ $(document).ready(function() {
   $("form").on("submit", function(event) {
     event.preventDefault();
 
-    $("#current-container").empty();
-    $("#target-container").empty();
-    $("#primary-container").empty();
-    $("#secondary-container").empty();
-    $("#tertiary-container").empty();
+    $("#one-degree-drawing-container").fadeOut("slow");
+
+    $('#target-container').find('*').not('.type-text-left').remove();
+    $('#primary-container').find('*').not('.type-text-right').remove();
+    $('#secondary-container').find('*').not('.type-text-left').remove();
+    $('#tertiary-container').find('*').not('.type-text-right').remove();
+
     $("#tweets-container").empty();
     $("#welcome-container").fadeOut("slow");
     $("#top-container").animate({ height: "250" }, 2500);
@@ -118,6 +120,13 @@ $(document).ready(function() {
       reset: true
     });
   })
+
+  $("#tweets-container").delegate(".keyword", "mouseover", function(event) {
+    event.preventDefault();
+    $(this).toggleClass("active-keyword-lite", 300);
+  }).delegate(".keyword", "mouseout", function(){
+    $(this).toggleClass("active-keyword-lite", 300);
+  });
 
   // $("#tertiary-container").on("mouseenter", ".twitter-user", function(event){
   //   event.preventDefault();
