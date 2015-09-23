@@ -1,9 +1,12 @@
 #content-container {
-  position: relative;
-  width: 80%;
-  height: 100%;
-  margin: auto;
-  padding: 0;
+  width: 1300px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 50px 5px;
+  background-color: white;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 #tweets-container {
@@ -15,12 +18,12 @@
   padding: 15px;
   border-radius: 10px;
   background-color: white;
-  -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25);
-     -moz-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25);
-          box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25);
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
+  -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25);
+     -moz-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 .profile-pic {
@@ -28,7 +31,6 @@
   height: 45px;
   position: absolute;
   border-radius: 50%;
-  background-color: red;
 }
 
 .tweet-content-container {
@@ -118,12 +120,12 @@
   color: #F8463E;
   padding: 0 10px;
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 400;
   border-radius: 5px;
   display: inline-block;
   margin: 0 12px 16px 0;
   background-color: white;
-  border: 2px solid #F8463E;
+  border: 1px solid #F8463E;
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
@@ -134,48 +136,44 @@
   color: white;
   padding: 0 10px;
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 400;
   border-radius: 5px;
   display: inline-block;
   margin: 0 12px 16px 0;
   background-color: #F8463E;
-  border: 2px solid #F8463E;
+  border: 1px solid #F8463E;
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
 }
 
-.active-keyword-lite {
+/*.active-keyword-lite {
   opacity: 0.9;
   height: 44px;
   color: white;
   padding: 0 10px;
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 400;
   border-radius: 5px;
   display: inline-block;
   margin: 0 12px 16px 0;
   background-color: #F8463E;
-  border: 2px solid #F8463E;
+  border: 1px solid #F8463E;
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
-}
+}*/
 
 #search-results-container {
   float: right;
-  height: 100%;
-  width: 50%;
+  width: 650px;
 }
 
 .search-result-container {
-  height: 100%;
-  width: 90%;
   padding: 12px;
-  margin: auto;
+  border-radius: 10px;
   margin-bottom: 30px;
   background-color: white;
-  border-radius: 5px;
 }
 
 #search-result-tweet-to {
