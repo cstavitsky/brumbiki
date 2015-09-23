@@ -1,18 +1,12 @@
+
 $(document).ready(function() {
   var keywords = []
   var tweet = ""
 
   $("#keyword-search-container").hide();
-
+  $("#search-words").hide();
   var tweets = new TweetsCollection();
   var tweetsView = new TweetsView({ collection: tweets });
-
-  var emptyContainers = function() {
-    $('#target-container').find('*').not('.type-text-left').remove();
-    $('#primary-container').find('*').not('.type-text-right').remove();
-    $('#secondary-container').find('*').not('.type-text-left').remove();
-    $('#tertiary-container').find('*').not('.type-text-right').remove();
-  };
 
   $("#keyword-search-container").hide();
 
@@ -20,11 +14,16 @@ $(document).ready(function() {
     event.preventDefault();
 
     $("#one-degree-drawing-container").fadeOut("slow");
-    emptyContainers;
+
+    $('#target-container').find('*').not('.type-text-left').remove();
+    $('#primary-container').find('*').not('.type-text-right').remove();
+    $('#secondary-container').find('*').not('.type-text-left').remove();
+    $('#tertiary-container').find('*').not('.type-text-right').remove();
 
     $("#tweets-container").empty();
     $("#welcome-container").fadeOut("slow");
     $("#top-container").animate({ height: "250" }, 2500);
+    $("#search-words").hide();
 
     var twitterHandle = $("#search-bar").val();
 
@@ -33,13 +32,16 @@ $(document).ready(function() {
       data: $.param({ handle: twitterHandle })
     });
     $("#search-results-container").empty();
+
+    // $("#keyword-container").find("*").not("h4").remove();
   });
 
  function toggleKeyword(keywordButton) {
   if($(keywordButton).closest(".tweet")[0] != tweet[0]){
       keywords = []
       $(".keyword").removeClass("active-keyword")
-      $("#keyword-container").empty();
+      $("#keyword-container").find("*").not("h4").remove();
+      // $("#keyword-container").empty();
     }
   };
 
@@ -52,6 +54,7 @@ $(document).ready(function() {
         $(keywordButton).removeClass("active-keyword")
         if(keywords.length === 0 || keywords.first === ""){
         $("#search-results-container").empty();
+        $("#keyword-container").find("*").not("h4").remove();
       }
       } else {
         $(keywordButton).addClass("active-keyword");
@@ -62,6 +65,7 @@ $(document).ready(function() {
   $("#tweets-container").on("click", ".keyword", function(event){
       event.preventDefault();
     var twitterHandle = $("#search-bar").val();
+    $("#search-words").show();
     toggleKeyword(this)
     removeKeyword(this)
     var query = keywords.join(' ')
@@ -76,11 +80,12 @@ $(document).ready(function() {
   });
 
   $("#tweets-container").on("click", ".keyword", function(event){
-    event.preventDefault();
-
+      event.preventDefault();
     var text = $(this).val()
     if($(this).hasClass("active-keyword")){
     var text = $(this).val()
+    // $("#keyword-container").append("<h4>Your Search Words</h4>")
+
     $("#keyword-container").append("<input class='keyword-tracker' type='submit' value="+ text +">")
     }
     else{
@@ -110,10 +115,10 @@ $(document).ready(function() {
     };
   });
 
+
   $("#one-degree-button").on("click", function(event) {
     event.preventDefault();
 
-    $("#one-degree-button-container").fadeOut("slow");
     $("#top-container").animate({ height: "500" }, 1000);
 
     var twitterUsers = new TwitterUsersCollection();
@@ -130,16 +135,6 @@ $(document).ready(function() {
   }).delegate(".keyword", "mouseout", function(){
     $(this).toggleClass("active-keyword-lite", 300);
   });
-
-  // $("#minimize-button").on("click", function(event) {
-  //   event.preventDefault();
-  //
-  //   $("#one-degree-drawing-container").hide();
-  //   emptyContainers;
-  //
-  //   $("#top-container").animate({ height: "250" }, 2500).delay(5000);
-  //   $("#one-degree-button-container").fadeIn("slow")
-  // });
 
   // $("#tertiary-container").on("mouseenter", ".twitter-user", function(event){
   //   event.preventDefault();
