@@ -24,7 +24,12 @@ class Link
       end
     end
 
-    doc = Oga.parse_html(body)
+    begin
+      doc = Oga.parse_html(body)
+    rescue => e
+      return @url
+    end
+
     title = doc.at_css('title')
 
     title ? title.text : @url
