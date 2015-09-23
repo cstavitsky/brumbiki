@@ -20,7 +20,7 @@ $(document).ready(function() {
     event.preventDefault();
 
     $("#one-degree-drawing-container").fadeOut("slow");
-    emptyContainers;
+    emptyContainers();
 
     $("#tweets-container").empty();
     $("#welcome-container").fadeOut("slow");
@@ -131,15 +131,15 @@ $(document).ready(function() {
     $(this).toggleClass("active-keyword-lite", 300);
   });
 
-  // $("#minimize-button").on("click", function(event) {
-  //   event.preventDefault();
-  //
-  //   $("#one-degree-drawing-container").hide();
-  //   emptyContainers;
-  //
-  //   $("#top-container").animate({ height: "250" }, 2500).delay(5000);
-  //   $("#one-degree-button-container").fadeIn("slow")
-  // });
+  $("#minimize-button").on("click", function(event) {
+    event.preventDefault();
+
+    $("#one-degree-drawing-container").hide();
+    emptyContainers();
+
+    $("#top-container").animate({ height: "250" }, 2500);
+    $("#one-degree-button-container").fadeIn("slow")
+  });
 
   // $("#tertiary-container").on("mouseenter", ".twitter-user", function(event){
   //   event.preventDefault();
