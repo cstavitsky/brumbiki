@@ -74,10 +74,14 @@
   margin: 35px 0 0 0;
 }
 
-.tweet-link {
-  color: #6CD9F8;
+.tweet-link, #search-result-link {
+  color: #0071A8;
   font-weight: 400;
   text-decoration: none;
+}
+
+.tweet-link:hover {
+  color: #A32200;
 }
 
 .reply-button {
@@ -91,7 +95,11 @@
   font-size: 16px;
   position: absolute;
   border-radius: 5px;
-  background-color: #6CD9F8;
+  background-color: #004567;
+}
+
+.reply-button:hover {
+  background-color: #0071A8
 }
 
 .keyword-cloud {
@@ -101,7 +109,7 @@
 .keyword {
   height: 40px;
   outline: none;
-  color: #F8463E;
+  color: #A32200;
   padding: 0 10px;
   font-size: 15px;
   font-weight: 400;
@@ -109,7 +117,7 @@
   display: inline-block;
   margin: 0 12px 16px 0;
   background-color: white;
-  border: 1px solid #F8463E;
+  border: 1px solid #A32200;
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
@@ -124,8 +132,8 @@
   border-radius: 5px;
   display: inline-block;
   margin: 0 12px 16px 0;
-  background-color: #F8463E;
-  border: 1px solid #F8463E;
+  background-color: #A32200;
+  border: 1px solid #A32200;
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
@@ -158,8 +166,8 @@
   border-radius: 5px;
   display: inline-block;
   margin: 0 12px 16px 0;
-  background-color: #F8463E;
-  border: 1px solid #F8463E;
+  background-color: #A32200;
+  border: 1px solid #A32200;
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
@@ -171,5 +179,21 @@
 }
 
 .search-result-container {
+  overflow: hidden;
   margin-bottom: 30px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#search-result-link {
+  color: #0071A8;
+}
+
+#search-result-link:hover {
+  color: #A32200;
+}
+
+.twitter-share-button {
+  float: right;
 }

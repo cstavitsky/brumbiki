@@ -13,17 +13,28 @@ $(document).ready(function() {
     $('#tertiary-container').find('*').not('.type-text-right').remove();
   };
 
+  $(".type-containers").hover(function() {
+    $(this).children(".type-text-right").css("background-color", "#A32200");
+    $(this).children(".type-text-left").css("background-color", "#A32200");
+  }, function() {
+    $(".type-text-right").css("background-color", "#004567");
+    $(".type-text-left").css("background-color", "#004567");
+  });
+
+  $("#keyword-search-container").hide();
+
   $("form").on("submit", function(event) {
     event.preventDefault();
 
     $("#pointer-arrow").fadeOut("slow");
     $("#one-degree-drawing-container").fadeOut("slow");
     emptyContainers();
-
+    $("#search-results-container").find("*").not("#keyword-container, .keyword-tracker").remove();
+    $("#keyword-container").empty();
     $("#tweets-container").empty();
+
     $("#welcome-container").fadeOut("slow");
     $("#top-container").animate({ height: "250" }, 2500);
-    $("#search-words").hide();
 
     var twitterHandle = $("#search-bar").val();
 
