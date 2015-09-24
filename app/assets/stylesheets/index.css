@@ -24,10 +24,10 @@
   top: calc(50% - 75px);
   padding: 200px 0 100px 0;
   transform: translateY(-50%);
-  background: -webkit-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.35));
-  background: -o-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.35));
-  background: -moz-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.35));
-  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.35));
+  background: -webkit-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+  background: -o-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+  background: -moz-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
 }
 
 #welcome-container h3 {
@@ -48,8 +48,25 @@
   margin: 0 auto;
   width: 80%;
   color: white;
-  font-size: 35px;
-  font-weight: 300;
+  font-size: 28px;
+  font-weight: 200;
+  /*font-style: italic;*/
+  text-align: left;
+}
+
+#initial-login-button {
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 5px;
+  border: 0;
+  height: 60px;
+  width: 300px;
+  padding: 8px 16px;
+  margin-top: 30px;
+  /*position: relative;*/
+  text-align: center;
+  background-color: #A32200;
+  color: white;
 }
 
 #bottom-container {
