@@ -26,7 +26,8 @@ $(document).ready(function() {
   $("form").on("submit", function(event) {
     event.preventDefault();
 
-    $("#pointer-arrow").fadeOut("slow");
+    // $("#pointer-arrow").fadeOut("slow");
+    $("#one-degree-button-container").fadeOut("slow");
     $("#one-degree-drawing-container").fadeOut("slow");
     emptyContainers();
     $("#search-results-container").find("*").not("#keyword-container, .keyword-tracker").remove();

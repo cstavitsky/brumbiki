@@ -76,29 +76,35 @@
 
 .tweet-link, #search-result-link {
   color: #0071A8;
+  display: block;
   font-weight: 400;
   text-decoration: none;
 }
 
-.tweet-link:hover {
+.tweet-link:hover, #search-result-link:hover {
   color: #A32200;
+}
+
+.reply-button, .twitter-share-button {
+  border: none;
+  color: white;
+  outline: none;
+  font-size: 16px;
+  padding: 8px 10px;
+  border-radius: 5px;
+  background-color: #004567;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .reply-button {
   right: 0;
   bottom: 0;
-  width: 80px;
-  height: 30px;
-  border: none;
-  color: white;
-  outline: none;
-  font-size: 16px;
   position: absolute;
-  border-radius: 5px;
-  background-color: #004567;
 }
 
-.reply-button:hover {
+.reply-button:hover, .twitter-share-button:hover {
   background-color: #0071A8
 }
 
@@ -184,14 +190,6 @@
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
-}
-
-#search-result-link {
-  color: #0071A8;
-}
-
-#search-result-link:hover {
-  color: #A32200;
 }
 
 .twitter-share-button {
