@@ -5,6 +5,7 @@ $(document).ready(function() {
 
   var tweets = new TweetsCollection();
   var tweetsView = new TweetsView({ collection: tweets });
+  $("#loading-container").hide();
 
   var emptyContainers = function() {
     $('#target-container').find('*').not('.type-text-left').remove();
@@ -27,6 +28,7 @@ $(document).ready(function() {
     event.preventDefault();
 
     // $("#pointer-arrow").fadeOut("slow");
+    $("#loading-container").fadeIn("slow");
     $("#one-degree-button-container").fadeOut("slow");
     $("#one-degree-drawing-container").fadeOut("slow");
     emptyContainers();
@@ -41,8 +43,9 @@ $(document).ready(function() {
 
     tweets.fetch({
       reset: true,
-      data: $.param({ handle: twitterHandle })
+      data: $.param({ handle: twitterHandle }),
     });
+    $("#loading-container").delay(7000).fadeOut('slow');
   });
 
   function tweetFor(keywordButton) {
