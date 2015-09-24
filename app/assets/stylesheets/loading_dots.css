@@ -1,6 +1,7 @@
 /* via http://tobiasahlin.com/spinkit/ */
 
 #loading-container {
+  display: none;
   width: 600px;
   margin: 0 auto;
   padding-top: 150px;
