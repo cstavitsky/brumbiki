@@ -169,19 +169,10 @@ $(document).ready(function() {
     });
   });
 
-  // $("#tertiary-container").on("mouseenter", ".twitter-user", function(event){
-  //   event.preventDefault();
-  //   $(this).find("#twitter-user-description").css("display", "inline-block")
-  // })
-  //
-  // $("#tertiary-container").on("mouseleave", ".twitter-user", function(event){
-  //   event.preventDefault();
-  //   $(this).find("#twitter-user-description").css("display", "none")
-  // })
-  //
-  //  $("#tertiary-container").on("click", ".profile-circles", function(event){
-  //   event.preventDefault()
-  //   $(".twitter-user").draggable();
-  // })
+  $("#nav-brumbiki").on("click", function(event) {
+    event.preventDefault();
+
+    location = "http://localhost:3000/";
+  });
 
 });
