@@ -44,8 +44,10 @@ $(document).ready(function() {
     tweets.fetch({
       reset: true,
       data: $.param({ handle: twitterHandle }),
+      success: function(){
+        $("#loading-container").fadeOut('slow');
+      }
     });
-    $("#loading-container").delay(7000).fadeOut('slow');
   });
 
   function tweetFor(keywordButton) {
