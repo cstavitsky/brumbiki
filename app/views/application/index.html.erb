@@ -20,7 +20,7 @@
   <div id="one-degree-button-container">
 
     <% if current_user %>
-        <button id="one-degree-button">Brumbiki found others to include in the conversation!</button>
+        <button id="one-degree-button">Click to find others to include in the conversation!</button>
     <% else %>
       <button id="login">Please login to see your Brumbiki!</button>
     <% end %>
@@ -31,16 +31,16 @@
     <div id="minimize-button"><a href="">-</a></div>
 
     <div class="type-containers" id="target-container">
-      <h4 class="type-text-left">This is your target user. BANG BANG!</h4>
+      <h4 class="type-text-left">This is your main contact:</h4>
     </div>
     <div class="type-containers" id="primary-container">
-      <h4 class="type-text-right">Your target has mentioned someone in a tweet that currently follows you!</h4>
+      <h4 class="type-text-right">People your contact has mentioned in a tweet that currently follow you:</h4>
     </div>
     <div class="type-containers" id="secondary-container">
-      <h4 class="type-text-left">Your target is following someone that is currently following you!</h4>
+      <h4 class="type-text-left">People your contact is following that also follow you:</h4>
     </div>
     <div class="type-containers" id="tertiary-container">
-      <h4 class="type-text-right">These are the top 3 most mentioned users by your target.</h4>
+      <h4 class="type-text-right">The top 3 poeple your contact mentions most:</h4>
     </div>
   </div>
 </div>
