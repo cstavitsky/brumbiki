@@ -37,7 +37,8 @@ $(document).ready(function() {
     $("#tweets-container").empty();
 
     $("#welcome-container").fadeOut("slow");
-    $("#top-container").animate({ height: "250" }, 2500);
+    $("#top-container").animate({ height: "300" }, 2500);
+    $("#bottom-container").animate({ top: "300" }, 2500);
 
     var twitterHandle = $("#search-bar").val();
 
