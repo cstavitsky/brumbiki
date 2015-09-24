@@ -1,5 +1,6 @@
 #content-container {
   width: 1300px;
+  display: none;
   margin: 0 auto;
   overflow: hidden;
   padding: 50px 5px;
