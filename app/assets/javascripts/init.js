@@ -172,7 +172,7 @@ $(document).ready(function() {
   $("#nav-brumbiki").on("click", function(event) {
     event.preventDefault();
 
-    location = "http://localhost:3000/";
+    location = "/";
   });
 
 });
