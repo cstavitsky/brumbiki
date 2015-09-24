@@ -29,6 +29,8 @@
 
 #one-degree-drawing-container {
   top: 75px;
+  width: 100%;
+  height: calc(100% - 75px);
   margin: auto;
   display: none;
   position: absolute;

@@ -163,7 +163,9 @@ $(document).ready(function() {
     $("#one-degree-drawing-container").hide();
     emptyContainers();
 
-    $("#top-container").animate({ height: "250" }, 2500);
+    $("#welcome-container").fadeOut("slow");
+    $("#top-container").animate({ height: "35%" }, 2500);
+    $("#bottom-container").animate({ top: "35%" }, 2500);
     $("#one-degree-button-container").fadeIn("slow")
   });
 
