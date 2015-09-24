@@ -3,5 +3,7 @@
 
   <p id="search-result-description"><%= description %></p>
 
-  <a id="search-result-tweet-to" href="https://twitter.com/share?url=<%=url%>&text=Check this out! <%=handle%>" data-url="<%=url%>" class="twitter-share-button" onClick='showPopup(this.href);return(false);'><img src="http://i.imgur.com/mOKt12S.png" height="25px"></a>
+  <a href="https://twitter.com/share?url=<%= url %>&text=<%= handle %> I thought you might find this interesting - " data-url="<%= url %>" onClick='showPopup(this.href);return(false);'>
+    <button class="twitter-share-button">Tweet <%= handle %></button>
+  </a>
 </div>
