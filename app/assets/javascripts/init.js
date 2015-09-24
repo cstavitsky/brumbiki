@@ -28,6 +28,7 @@ $(document).ready(function() {
     event.preventDefault();
 
     // $("#pointer-arrow").fadeOut("slow");
+    $("#loading-text").html("Loading...")
     $("#loading-container").fadeIn("slow");
     $("#one-degree-button-container").fadeOut("slow");
     $("#one-degree-drawing-container").fadeOut("slow");
@@ -49,7 +50,6 @@ $(document).ready(function() {
       },
       error: function(){
         $("#loading-text").html("You searched for someone who doesn't exist in Twitter's database. Check your spelling and try again!")
-        $("#loading-container").append("<p></p>")
       }
     });
   });
