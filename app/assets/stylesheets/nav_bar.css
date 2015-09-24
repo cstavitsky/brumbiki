@@ -47,7 +47,7 @@ nav {
   position: absolute;
 }
 
-nav a {
+.login-logout {
   top: 0;
   right: 0;
   color: white;
@@ -62,6 +62,6 @@ nav a {
           box-sizing: border-box;
 }
 
-nav a:hover {
+.login-logout:hover {
   background-color: #004567;
 }

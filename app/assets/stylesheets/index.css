@@ -62,10 +62,13 @@
   width: 300px;
   padding: 8px 16px;
   margin-top: 30px;
-  /*position: relative;*/
   text-align: center;
   background-color: #A32200;
   color: white;
+}
+
+#initial-login-button:hover {
+  background-color: #C43712;
 }
 
 #bottom-container {

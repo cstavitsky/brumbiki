@@ -28,12 +28,12 @@
         </div>
       <% end %>
 
-      <h2 id="nav-brumbiki">brumbiki</h2>
+      <a id="nav-brumbiki" href="/">brumbiki</a>
 
       <% if current_user %>
-        <a href="/logout">Logout</a>
+        <a class="login-logout" href="/logout">Logout</a>
       <% else %>
-        <a href="/auth/twitter">Login</a>
+        <a class="login-logout" href="/auth/twitter">Login</a>
       <% end %>
     </nav>
 
