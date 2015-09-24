@@ -3,15 +3,24 @@
   <div id="welcome-container">
     <h3>Welcome to</h3>
     <h1>brumbiki</h1>
-    <h4>Enter a Twitter handle to begin expanding your network and exploring what's meaningful to you</h4>
+
+    <% if !current_user %>
+      <h4>Networking is tedious. Let Brumbiki make it easy by delivering you useful content based on the articles and videos that your contact cares most deeply about.</h4>
+    <% else %>
+      <h4>Enter a Twitter handle in the search bar to begin expanding your network and exploring meaningful conversations.</h4>
+    <% end %>
+
+    <% if !current_user %>
+      <a href="/auth/twitter">
+        <button id="initial-login-button">Login With Twitter</button>
+      </a>
+    <% end %>
   </div>
 
   <div id="one-degree-button-container">
 
     <% if current_user %>
-      <!-- <div id="one-degree-button"> -->
         <button id="one-degree-button" class="hatch">Brumbiki found others to include in the conversation!</button>
-      <!-- </div> -->
     <% else %>
       <button id="login">Please login to see your Brumbiki!</button>
     <% end %>
