@@ -164,8 +164,9 @@ $(document).ready(function() {
 
     $("#welcome-container").fadeOut("slow");
     $("#top-container").animate({ height: "35%" }, 2500);
-    $("#bottom-container").animate({ top: "35%" }, 2500);
-    $("#one-degree-button-container").fadeIn("slow")
+    $("#bottom-container").animate({ top: "35%", height: "65%" }, 2500, "swing", function() {
+      $("#one-degree-button-container").fadeIn("slow");
+    });
   });
 
   // $("#tertiary-container").on("mouseenter", ".twitter-user", function(event){
