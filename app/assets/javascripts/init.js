@@ -14,11 +14,11 @@ $(document).ready(function() {
   };
 
   $(".type-containers").hover(function() {
-    $(this).children(".type-text-right").css("background-color", "#A32200");
-    $(this).children(".type-text-left").css("background-color", "#A32200");
+    $(this).children(".type-text-right").css("background-color", "#D93240");
+    $(this).children(".type-text-left").css("background-color", "#D93240");
   }, function() {
-    $(".type-text-right").css("background-color", "#004567");
-    $(".type-text-left").css("background-color", "#004567");
+    $(".type-text-right").css("background-color", "#242464");
+    $(".type-text-left").css("background-color", "#242464");
   });
 
   $("#keyword-search-container").hide();
@@ -151,9 +151,9 @@ $(document).ready(function() {
 
   $("#tweets-container").delegate(".keyword", "mouseover", function(event) {
     event.preventDefault();
-    $(this).toggleClass("active-keyword-lite", 300);
+    $(this).toggleClass("active-keyword-lite", 200);
   }).delegate(".keyword", "mouseout", function(){
-    $(this).toggleClass("active-keyword-lite", 300);
+    $(this).toggleClass("active-keyword-lite", 200);
   });
 
   $("#minimize-button").on("click", function(event) {
