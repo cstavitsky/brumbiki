@@ -77,19 +77,25 @@ class Tweet
   end
 
   def self.text_keywords(text)
-    text.keywords.rank.map { |word| word.text }
+      blacklist = Highscore::Blacklist.load "again why to and also then equally identically like as too moreover very really totally actually when can this you are is that were the amp our for might near left what if have com out from pre lot had nice been with all would could should did but here"
+      new_text = Highscore::Content.new text, blacklist
+      new_text.keywords.rank.map { |word| word.text }
   end
 
   def self.title_keywords(links)
     # titles = links.reject!{ |link| link.title.match(/^\s*(#|$)|\b(http.*|https.*)\b/) }
     keywords = links.map do |link|
-      title = self.split_title(link.title)
-      title.keywords.rank.map { |word| word.text }
+      title = self.scrub_title(link.title)
+      blacklist = Highscore::Blacklist.load "again why to and also then equally identically like as too moreover very really totally actually when can this you are is that were the amp our for might near left what if have com out from pre lot had nice been with all would could should did but here"
+      # title
+      new_title = Highscore::Content.new title, blacklist
+      # new_title.keywords
+      new_title.keywords.rank.map { |word| word.text }
     end
     keywords.flatten
   end
 
-  def self.split_title(title)
+  def self.scrub_title(title)
     title = title.split(" ")
     title.delete_if { |word| word.match(/^\s*(#|$)|\b(http.*|https.*)\b/) }
     title.join(" ")
