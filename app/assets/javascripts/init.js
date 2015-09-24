@@ -5,7 +5,6 @@ $(document).ready(function() {
 
   var tweets = new TweetsCollection();
   var tweetsView = new TweetsView({ collection: tweets });
-  $("#loading-container").hide();
 
   var emptyContainers = function() {
     $('#target-container').find('*').not('.type-text-left').remove();
@@ -29,7 +28,7 @@ $(document).ready(function() {
 
     // $("#pointer-arrow").fadeOut("slow");
     $("#loading-text").html("Loading...")
-    $("#loading-container").fadeIn("slow");
+    $("#loading-container").show();
     $("#one-degree-button-container").fadeOut("slow");
     $("#one-degree-drawing-container").fadeOut("slow");
     emptyContainers();
@@ -48,7 +47,7 @@ $(document).ready(function() {
       reset: true,
       data: $.param({ handle: twitterHandle }),
       success: function(){
-        $("#loading-container").fadeOut('slow');
+        $("#loading-container").hide();
       },
       error: function(){
         $("#loading-text").html("You searched for someone who doesn't exist in Twitter's database. Check your spelling and try again!")

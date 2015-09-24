@@ -1,3 +1,8 @@
+#full-width-content-container {
+  width: 100%;
+  background-color: white;
+}
+
 #content-container {
   width: 1300px;
   display: none;
