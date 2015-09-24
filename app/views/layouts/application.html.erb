@@ -19,19 +19,21 @@
   <body>
 
     <nav>
-      <div id="search-container">
-        <%= form_tag do %>
-          <input id="search-bar" name="search-bar" type="text" placeholder="@username">
-          <i id="search-icon" class="fa fa-search"></i>
-        <% end %>
-      </div>
+      <% if current_user %>
+        <div id="search-container">
+          <%= form_tag do %>
+            <input id="search-bar" name="search-bar" type="text" placeholder="@username">
+            <i id="search-icon" class="fa fa-search"></i>
+          <% end %>
+        </div>
+      <% end %>
 
       <h2 id="nav-brumbiki">brumbiki</h2>
 
       <% if current_user %>
         <a href="/logout">Logout</a>
       <% else %>
-        <a href="/auth/twitter">Login With Twitter</a>
+        <a href="/auth/twitter">Login</a>
       <% end %>
     </nav>
 
