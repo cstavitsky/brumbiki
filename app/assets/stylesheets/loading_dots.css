@@ -4,6 +4,7 @@
   margin: 100px auto;
   position: relative;
   text-align: center;
+  max-width: 600px;
 }
 
 .spinner {
