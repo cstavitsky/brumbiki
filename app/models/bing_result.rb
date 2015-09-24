@@ -13,7 +13,7 @@ class BingResult
 
   def self.all_results(query, handle)
     BingSearch.account_key = ENV['BING_ACCOUNT_KEY']
-    BingSearch.web(query).first(10).map do |search_result|
+    BingSearch.web(query, limit: 10).map do |search_result|
       BingResult.new(url: search_result.url, title: search_result.title, description: search_result.description, handle: handle)
     end
   end

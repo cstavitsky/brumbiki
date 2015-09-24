@@ -5,7 +5,6 @@ $(document).ready(function() {
 
   var tweets = new TweetsCollection();
   var tweetsView = new TweetsView({ collection: tweets });
-  $("#loading-container").hide();
 
   var emptyContainers = function() {
     $('#target-container').find('*').not('.type-text-left').remove();
@@ -29,7 +28,7 @@ $(document).ready(function() {
 
     // $("#pointer-arrow").fadeOut("slow");
     $("#loading-text").html("Loading...")
-    $("#loading-container").fadeIn("slow");
+    $("#loading-container").show();
     $("#one-degree-button-container").fadeOut("slow");
     $("#one-degree-drawing-container").fadeOut("slow");
     emptyContainers();
@@ -37,8 +36,10 @@ $(document).ready(function() {
     $("#keyword-container").empty();
     $("#tweets-container").empty();
 
+    $("#content-container").show();
     $("#welcome-container").fadeOut("slow");
-    $("#top-container").animate({ height: "250" }, 2500);
+    $("#top-container").animate({ height: "35%" }, 2500);
+    $("#bottom-container").animate({ top: "35%", height: "65%" }, 2500);
 
     var twitterHandle = $("#search-bar").val();
 
@@ -46,7 +47,7 @@ $(document).ready(function() {
       reset: true,
       data: $.param({ handle: twitterHandle }),
       success: function(){
-        $("#loading-container").fadeOut('slow');
+        $("#loading-container").hide();
       },
       error: function(){
         $("#loading-text").html("You searched for someone who doesn't exist in Twitter's database. Check your spelling and try again!")
@@ -137,7 +138,8 @@ $(document).ready(function() {
     event.preventDefault();
 
     $("#one-degree-button-container").fadeOut("slow");
-    $("#top-container").animate({ height: "500" }, 1000);
+    $("#top-container").animate({ height: "60%" }, 1000);
+    $("#bottom-container").animate({ top: "60%", height: "40%" }, 1000);
 
     var twitterUsers = new TwitterUsersCollection();
     var twitterUsersView = new TwitterUsersView({ collection: twitterUsers });
@@ -160,8 +162,11 @@ $(document).ready(function() {
     $("#one-degree-drawing-container").hide();
     emptyContainers();
 
-    $("#top-container").animate({ height: "250" }, 2500);
-    $("#one-degree-button-container").fadeIn("slow")
+    $("#welcome-container").fadeOut("slow");
+    $("#top-container").animate({ height: "35%" }, 2500);
+    $("#bottom-container").animate({ top: "35%", height: "65%" }, 2500, "swing", function() {
+      $("#one-degree-button-container").fadeIn("slow");
+    });
   });
 
   // $("#tertiary-container").on("mouseenter", ".twitter-user", function(event){

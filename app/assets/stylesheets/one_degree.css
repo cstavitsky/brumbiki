@@ -1,26 +1,27 @@
 #one-degree-button-container {
-  height: 200px;
+  top: 75px;
   width: 100%;
+  height: calc(100% - 75px);
   display: none;
-  position: relative;
+  position: absolute;
 }
 
 #one-degree-button {
-  display: inline-block;
-  text-decoration: none;
-  border-radius: 5px;
-  border: 0;
-  height: 60px;
-  width: 300px;
-  padding: 8px 16px;
-  position: relative;
-  top: calc(50% + 15px);
-  left: calc(50% - 150px);
-  transform: translateY(-50%);
-  text-align: center;
-  background-color: #A32200;
   color: white;
+  width: 300px;
+  height: 60px;
+  border: none;
+  padding: 8px 16px;
+  position: absolute;
+  text-align: center;
+  border-radius: 5px;
+  top: calc(50% - 30px);
+  left: calc(50% - 150px);
+  background-color: #A32200;
   box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.5);
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 #one-degree-button:hover {
@@ -33,10 +34,12 @@
 }
 
 #one-degree-drawing-container {
-  height: 500px;
-  display: none;
-  position: relative;
+  top: 75px;
+  width: 100%;
+  height: calc(100% - 75px);
   margin: auto;
+  display: none;
+  position: absolute;
   text-align: center;
   background-color: rgba(255, 255, 255, 0.15);
 }
@@ -94,8 +97,8 @@
 }
 
 .profile-circles {
-  height: 55px;
-  width: 55px;
+  height: 49px;
+  width: 49px;
   border-radius: 50%;
 }
 

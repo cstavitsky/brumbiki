@@ -1,5 +1,11 @@
+#full-width-content-container {
+  width: 100%;
+  background-color: white;
+}
+
 #content-container {
   width: 1300px;
+  display: none;
   margin: 0 auto;
   overflow: hidden;
   padding: 50px 5px;
