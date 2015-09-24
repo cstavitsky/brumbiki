@@ -19,7 +19,7 @@ nav {
   width: 200px;
   height: 35px;
   border: none;
-  padding: 0 10px;
+  padding: 0 32px 0 10px;
   border-radius: 5px;
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
@@ -27,11 +27,11 @@ nav {
 }
 
 #search-icon {
+  top: 50%;
   color: black;
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
   right: calc(50% - 90px);
+  transform: translateY(-50%);
 }
 
 #nav-brumbiki {
