@@ -30,7 +30,9 @@ class Tweet
   def self.tweet_info(tweet)
     text = self.tweet_text(tweet)
     links = self.tweet_links(tweet)
-
+    text_kwords = self.text_keywords(text).map!{|keyword| keyword.downcase}
+    title_kwords = self.title_keywords(links).map!{|keyword| keyword.downcase}
+    title_kwords.reject! {|keyword| text_kwords.include?(keyword)}
     {
       tweet_id: tweet.id.to_s,
       target_id: tweet.user.id,
@@ -42,8 +44,8 @@ class Tweet
       text: text,
       target_profile_image_url: self.profile_image_url(tweet),
       links: links,
-      text_keywords: self.text_keywords(text),
-      title_keywords: self.title_keywords(links)
+      text_keywords: text_kwords, #self.text_keywords(text),
+      title_keywords: title_kwords #self.title_keywords(links)
     }
   end
 
@@ -75,10 +77,18 @@ class Tweet
   end
 
   def self.title_keywords(links)
+    # titles = links.reject!{ |link| link.title.match(/^\s*(#|$)|\b(http.*|https.*)\b/) }
     keywords = links.map do |link|
-      link.title.keywords.rank.map { |word| word.text }
+      title = self.split_title(link.title)
+      title.keywords.rank.map { |word| word.text }
     end
     keywords.flatten
+  end
+
+  def self.split_title(title)
+    title = title.split(" ")
+    title.delete_if { |word| word.match(/^\s*(#|$)|\b(http.*|https.*)\b/) }
+    title.join(" ")
   end
 
 end
