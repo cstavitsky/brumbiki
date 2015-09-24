@@ -1,9 +1,10 @@
 /* via http://tobiasahlin.com/spinkit/ */
 
 #loading-container {
-  margin: 100px auto;
-  position: relative;
+  margin: 0 auto;
+  position: absolute;
   text-align: center;
+  right: calc(50% - 75px);
 }
 
 .spinner {
