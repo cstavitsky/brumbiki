@@ -36,9 +36,10 @@ $(document).ready(function() {
     $("#keyword-container").empty();
     $("#tweets-container").empty();
 
+    $("#content-container").show();
     $("#welcome-container").fadeOut("slow");
-    $("#top-container").animate({ height: "300" }, 2500);
-    $("#bottom-container").animate({ top: "300" }, 2500);
+    $("#top-container").animate({ height: "35%" }, 2500);
+    $("#bottom-container").animate({ top: "35%", height: "65%" }, 2500);
 
     var twitterHandle = $("#search-bar").val();
 
@@ -134,7 +135,8 @@ $(document).ready(function() {
     event.preventDefault();
 
     $("#one-degree-button-container").fadeOut("slow");
-    $("#top-container").animate({ height: "500" }, 1000);
+    $("#top-container").animate({ height: "60%" }, 1000);
+    $("#bottom-container").animate({ top: "60%", height: "40%" }, 1000);
 
     var twitterUsers = new TwitterUsersCollection();
     var twitterUsersView = new TwitterUsersView({ collection: twitterUsers });
