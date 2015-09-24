@@ -61,12 +61,12 @@
   text-align: center;
   border-radius: 5px;
   display: inline-block;
-  background-color: #A32200;
+  background-color: #242464;
   box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.75);
 }
 
 #initial-login-button:hover {
-  background-color: #C43712;
+  background-color: #59597C;
 }
 
 #bottom-container {
