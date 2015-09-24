@@ -46,6 +46,10 @@ $(document).ready(function() {
       data: $.param({ handle: twitterHandle }),
       success: function(){
         $("#loading-container").fadeOut('slow');
+      },
+      error: function(){
+        $("#loading-text").html("You searched for someone who doesn't exist in Twitter's database. Check your spelling and try again!")
+        $("#loading-container").append("<p></p>")
       }
     });
   });

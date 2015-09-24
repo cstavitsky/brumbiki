@@ -20,8 +20,12 @@ class Tweet
   end
 
   def self.all_tweets(handle)
-    Clientable.client.user_timeline(handle, { count: 40, include_rts: false }).map do |tweet|
-      Tweet.new(self.tweet_info(tweet))
+    begin
+      Clientable.client.user_timeline(handle, { count: 40, include_rts: false }).map do |tweet|
+        Tweet.new(self.tweet_info(tweet))
+      end
+    rescue => e
+      return "failure"
     end
   end
 
