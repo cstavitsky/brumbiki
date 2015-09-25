@@ -6,22 +6,12 @@
   position: absolute;
 }
 
-/*#pointer-arrow {
-  top: 15%;
-  left: 46%;
-  color: white;
-  margin: 0 auto;
-  font-size: 10em;
-  position: absolute;
-  text-align: center;
-}*/
-
 #welcome-container {
   width: 1000px;
   margin: 0 auto;
   margin-top: 75px;
   text-align: center;
-  padding: 14% 0 100px 0;
+  padding: 8% 0 50px 0;
   background: -webkit-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
   background: -o-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
   background: -moz-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));

@@ -138,8 +138,8 @@ $(document).ready(function() {
     event.preventDefault();
 
     $("#one-degree-button-container").fadeOut("slow");
-    $("#top-container").animate({ height: "60%" }, 1000);
-    $("#bottom-container").animate({ top: "60%", height: "40%" }, 1000);
+    $("#top-container").animate({ height: "70%" }, 1000);
+    $("#bottom-container").animate({ top: "70%", height: "30%" }, 1000);
 
     var twitterUsers = new TwitterUsersCollection();
     var twitterUsersView = new TwitterUsersView({ collection: twitterUsers });
