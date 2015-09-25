@@ -4,7 +4,7 @@
 }
 
 #content-container {
-  width: 1300px;
+  width: 1100px;
   display: none;
   margin: 0 auto;
   overflow: hidden;
@@ -17,7 +17,7 @@
 
 #tweets-container {
   float: left;
-  width: 550px;
+  width: 500px;
 }
 
 .tweet-container {
@@ -40,7 +40,7 @@
 }
 
 .tweet-content-container {
-  width: 475px;
+  width: 425px;
   text-align: left;
   padding-left: 8px;
   margin: 0 0 0 45px;
@@ -83,8 +83,12 @@
 .tweet-link, #search-result-link {
   color: #242464;
   display: block;
-  font-weight: 400;
+  font-weight: 500;
   text-decoration: none;
+}
+
+#search-result-link {
+  font-size: 18px;
 }
 
 .tweet-link:hover, #search-result-link:hover {
@@ -192,15 +196,21 @@
 
 #search-results-container {
   float: right;
-  width: 650px;
+  width: 550px;
 }
 
 .search-result-container {
   overflow: hidden;
-  margin-bottom: 30px;
+  margin-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid lightgrey;
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+.:first-child {
+  margin-top: 0;
 }
 
 .twitter-share-button {
