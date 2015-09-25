@@ -15,7 +15,15 @@ RSpec.describe Tweet, type: :model do
     end
 
     it 'should create instances of Tweet objects' do
-      expect(Tweet.all_tweets("fogus").rand(1..10)).to be_instance_of(Tweet)
+      expect(Tweet.all_tweets("fogus").last).to be_instance_of(Tweet)
+      expect(Tweet.all_tweets("fogus").first).to be_instance_of(Tweet)
     end
   end
+
+  # describe '.tweet_info' do
+  #   tweet = Tweet.all_tweets("fogus").first
+  #   it 'should return a hash of attributes that contains tweet_id' do
+  #     expect(Tweet.tweet_info(tweet)).to include(tweet_id)
+  #   end
+  # end
 end
