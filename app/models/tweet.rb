@@ -17,7 +17,6 @@ class Tweet
     @links = attributes[:links]
     @text_keywords = attributes[:text_keywords]
     @title_keywords = attributes[:title_keywords]
-    p self
   end
 
   def self.all_tweets(handle)
