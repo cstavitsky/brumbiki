@@ -209,10 +209,6 @@
           box-sizing: border-box;
 }
 
-.:first-child {
-  margin-top: 0;
-}
-
 .twitter-share-button {
   float: right;
 }
