@@ -66,7 +66,7 @@ group :development, :test do
   gem 'byebug'
   # Jasmine to test backbone functionality
   gem 'jasmine-rails'
-  gem 'rspec-rails', '~> 3.0'
+  # gem 'rspec-rails', '~> 3.0'
 end
 
 group :development do
