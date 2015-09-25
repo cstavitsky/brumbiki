@@ -83,8 +83,12 @@
 .tweet-link, #search-result-link {
   color: #242464;
   display: block;
-  font-weight: 400;
+  font-weight: 500;
   text-decoration: none;
+}
+
+#search-result-link {
+  font-size: 18px;
 }
 
 .tweet-link:hover, #search-result-link:hover {
